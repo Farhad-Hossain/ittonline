@@ -16,11 +16,13 @@ class CreateAppBasicInfosTable extends Migration
         Schema::create('app_basic_infos', function (Blueprint $table) {
             $table->id();
             $table->string('app_name')->unique();
+            $table->string('short_address')->unique();
             $table->string('mobile_number')->unique();
             $table->string('email')->unique();
             $table->string('logo_url')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
             $table->string('linkedin')->nullable();
             $table->unsignedInteger('created_by');

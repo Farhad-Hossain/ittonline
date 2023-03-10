@@ -17,6 +17,8 @@ class CreateSliderImagesTable extends Migration
             $table->id();
             $table->string('image_url');
             $table->string('serial_no')->nullable();
+            $table->string('secondary_title')->nullable();
+            $table->string('primary_title')->nullable();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->string('created_ip');

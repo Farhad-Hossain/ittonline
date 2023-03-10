@@ -31,7 +31,7 @@
                     <a href="{{route('admin.app_setup')}}"><i class="bx bx-right-arrow-alt"></i>Basic</a>
                 </li>
                 <li> 
-                    <a href="{{route('admin.slider_setup')}}"><i class="bx bx-right-arrow-alt"></i>Sider Setup</a>
+                    <a href="{{route('admin.slider_setup')}}"><i class="bx bx-right-arrow-alt"></i>Slider Setup</a>
                 </li>
             </ul>
         </li>

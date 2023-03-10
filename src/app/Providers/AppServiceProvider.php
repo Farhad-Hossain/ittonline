@@ -27,5 +27,12 @@ class AppServiceProvider extends ServiceProvider
     {
         $appInfo = AppBasicInfo::first() or null;
         View::share('appInfo', $appInfo);
+
+        $currentUrl = url()->full();
+        View::share([
+            'currentUrl'=>$currentUrl,
+            'title'=>$appInfo ? $appInfo->app_name : '',
+            'nav_title'=>''
+        ]);
     }
 }

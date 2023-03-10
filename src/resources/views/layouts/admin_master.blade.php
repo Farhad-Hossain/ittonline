@@ -25,8 +25,6 @@
 	<title>{{$title}}</title>
 </head>
 
-
-
 <body>
 	<!--wrapper-->
 	<div class="wrapper">
@@ -399,7 +397,7 @@
 					</div>
 				@elseif( session()->has('danger') )
 					<div class="alert alert-danger">
-						{{ session()->get('message') }}
+						{{ session()->get('danger') }}
 					</div>
 				@endif
 			   @yield('contents')

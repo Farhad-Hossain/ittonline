@@ -28,6 +28,10 @@
                             <label for="" class="form-label">Logo</label>
                             <input type="file" class="form-control" name='logo'>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label for="" class="form-label">Short Address</label>
+                            <input type="text" class="form-control" name='short_address' value="{{$basicInfo ? $basicInfo->short_address : ''}}">
+                        </div>
                     </div>
                     <div>
                         <h5 class="card-title mt-4">Social Links</h5>
@@ -41,6 +45,10 @@
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Twitter</label>
                             <input type="text" class="form-control" name="twitter" value="{{$basicInfo ? $basicInfo['twitter'] : ''}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="form-label">Instagram</label>
+                            <input type="text" class="form-control" name="instagram" value="{{$basicInfo ? $basicInfo['instagram'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Linkedin</label>

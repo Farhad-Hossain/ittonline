@@ -18,8 +18,14 @@
             <div class="col-md-3">
                 <div class="card">
                     <img src="{{asset($sliderImage->image_url)}}" class="card-img-top" alt="...">
+                    <div class="card-header">
+                        <span>{{$sliderImage->secondary_title}}</span>
+                    </div>
+                    <div class="card-header">
+                        <h4>{{$sliderImage->primary_title}}</h4>
+                    </div>
                     <div class="card-body">
-                        <button class="btn btn-primary slider-img-edit-btn" data-slider_id="{{$sliderImage->id}}">Replace</button>
+                        <button class="btn btn-primary slider-img-edit-btn" data-slider_id="{{$sliderImage->id}}" data-slider_secondary_title="{{$sliderImage->secondary_title}}" data-slider_primary_title="{{$sliderImage->primary_title}}">Edit</button>
                         <button class="btn btn-danger slider-img-delete-btn" data-slider_id="{{$sliderImage->id}}">Delete</button>
                     </div>
                 </div>
@@ -43,14 +49,22 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label for="" class="form-label">Select Image</label>
+                            <label for="" class="form-label">Select Image (jpg, jpeg, png, webp, bmp)</label>
                             <input type="file" class="form-control" name="slider_image">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="" class="form-label">Secondary Title</label>
+                            <input type="text" class="form-control" name="secondary_title" id="form-slider-secondary-title">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="" class="form-label">Primary Title</label>
+                            <input type="text" class="form-control" name="primary_title" id="form-slider-primary-title">
                         </div>
                     </div>                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add Image</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
 
@@ -71,6 +85,8 @@
         $(document).on('click', "#slider-img-add-btn, .slider-img-edit-btn", function () {
            if ( $(this).data('slider_id') ) {
               $("#form-slider-id").val($(this).data('slider_id'));
+              $("#form-slider-secondary-title").val($(this).data('slider_secondary_title'));
+              $("#form-slider-primary-title").val($(this).data('slider_primary_title'));
            }
            $("#slider-add-edit-modal").modal('show');
         })

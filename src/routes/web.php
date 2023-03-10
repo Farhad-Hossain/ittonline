@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('', 'FrontendController@welcome')->name('welcome');
 Route::get('/about', 'FrontendController@about')->name('about');
 Route::get('/courses', 'FrontendController@courses')->name('courses');
+Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
+Route::get('/contact', 'FrontendController@contact')->name('contact');
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middleware'=>'auth'], function() {
     Route::get('', 'GeneralController@dashboard')->name('dashboard');
