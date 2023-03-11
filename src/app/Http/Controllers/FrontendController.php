@@ -7,6 +7,7 @@ use App\Models\AppBasicInfo;
 use App\Models\SliderImage;
 use App\Models\PageContentAboutUs;
 use App\Models\PageContentQuote;
+use App\Models\Quote;
 
 class FrontendController extends Controller
 {
@@ -46,6 +47,25 @@ class FrontendController extends Controller
 
     public function quoteForm(Request $request)
     {
-        dd($request->all());
+        $data = [
+            'status'=>false,
+            'message'=>'',
+        ];
+        $quote = new Quote();
+        try {
+            $quote->name = $request->name ?? '';
+            $quote->email = $request->email;
+            $quote->service_name = $request->service_name;
+            $quote->message = $request->message;
+            $quote->ip = $request->ip();
+            $quote->save();
+
+            $data['status'] = true;
+            $data['message'] = 'Thank you.Your request submitted.';
+        } catch (\Exception $e) {
+            $data['message'] = $e->getMessage();
+        }
+
+        return response()->json($data, 200);
     }
 }

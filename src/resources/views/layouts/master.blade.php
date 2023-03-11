@@ -32,6 +32,9 @@
         </div>
     </div>
     <!-- Full Screen Search End -->
+
+    
+
     @yield('contents')
     
     @include('inc.footer')
@@ -49,6 +52,32 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('frontend')}}/js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $(document).on('submit', '#quote-request-form', function (event) {
+                event.preventDefault();
+                let target = $(this).attr('action');
+                let formData = $("#quote-request-form").serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: target,
+                    data: formData,
+                    processData:false,
+                    ContentType:false,
+                    success: function (data) {
+                        $("#quote-msg").text(data.message).removeClass('d-none');
+                        $("#quote-request-form").trigger('reset');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

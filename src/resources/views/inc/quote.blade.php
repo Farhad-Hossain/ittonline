@@ -1,5 +1,6 @@
 <!-- Quote Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-7">
@@ -27,8 +28,9 @@
                 </div>
             </div>
             <div class="col-lg-5">
+                <div class="alert alert-info d-none" id="quote-msg"></div>
                 <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                    <form action="{{route('quote_form')}}" method="POST">
+                    <form action="{{route('quote_form')}}" method="POST" id="quote-request-form">
                         @csrf
                         <div class="row g-3">
                             <div class="col-xl-12">
@@ -44,7 +46,7 @@
                                 <textarea class="form-control bg-light border-0" rows="3" name="message" placeholder="Message"></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                <button class="btn btn-dark w-100 py-3" type="submit" id="quote-request-btn">Request A Quote</button>
                             </div>
                         </div>
                     </form>

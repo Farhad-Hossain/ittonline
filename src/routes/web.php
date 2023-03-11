@@ -27,6 +27,8 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
     Route::match(['POST'], 'slider-edit-add', 'AppSetupController@sliderAddEdit')->name('slider_add_edit');
     Route::match(['POST'], 'slider-img-delete', 'AppSetupController@sliderDelete')->name('slider_img_delete');
 
+    // Route::match(['GET'], 'all-quotes', '');
+
     Route::group(['prefix'=>'page-content', 'as'=>'page_content.'], function () {
         Route::match(["GET","POST"],'about-us', 'PageContentController@aboutUs')->name('about_us');
         Route::match(["GET","POST"],'free-quote', 'PageContentController@freeQuote')->name('free_quote');
