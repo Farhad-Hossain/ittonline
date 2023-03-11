@@ -39,18 +39,22 @@
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-repeat"></i>
                 </div>
-                <div class="menu-title">Content</div>
+                <div class="menu-title">Page Content</div>
             </a>
             <ul>
-                <li> <a href="content-grid-system.html"><i class="bx bx-right-arrow-alt"></i>Grid System</a>
+                <li> 
+                    <a href="{{route('admin.page_content.about_us')}}"><i class="bx bx-right-arrow-alt"></i>About Us</a>
                 </li>
-                <li> <a href="content-typography.html"><i class="bx bx-right-arrow-alt"></i>Typography</a>
+                <li> 
+                    <a href="{{route('admin.page_content.free_quote')}}"><i class="bx bx-right-arrow-alt"></i>Free Quote</a>
                 </li>
-                <li> <a href="content-text-utilities.html"><i class="bx bx-right-arrow-alt"></i>Text Utilities</a>
+                <li> 
+                    <a href="{{route('admin.page_content.contact')}}"><i class="bx bx-right-arrow-alt"></i>Contact</a>
                 </li>
             </ul>
         </li>
         
+        {{--
         <li class="menu-label">Addons</li>
         <li>
             <a class="has-arrow" href="javascript:;">
@@ -70,26 +74,36 @@
                 </li>
             </ul>
         </li>
+        --}}
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-lock"></i>
+                </div>
+                <div class="menu-title">Course Setup</div>
+            </a>
+            <ul>
+                <li> 
+                    <a href="{{route('admin.course.all')}}"><i class="bx bx-right-arrow-alt"></i>All Courses</a>
+                </li>
+                <li> 
+                    <a href="{{route('admin.course.add_course')}}"><i class="bx bx-right-arrow-alt"></i>Create Course</a>
+                </li>
+            </ul>
+        </li>
         <li>
             <a href="charts-chartjs.html">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>
-                <div class="menu-title">Charts</div>
+                <div class="menu-title">Quotes</div>
             </a>
         </li>
         <li>
             <a href="table-datatable.html">
                 <div class="parent-icon"> <i class="bx bx-video-recording"></i>
                 </div>
-                <div class="menu-title">Tables</div>
+                <div class="menu-title">Contacts</div>
             </a>
         </li>
     </ul>
     <!--end navigation-->
-    <div class="pro-card border border-light-2 bg-light-transparent p-3 radius-10 mx-3">
-        <p class="text-light">Rocker Premium Template has full features of all UI Components for admin panel.</p>
-        <div class="d-grid">
-            <a href="https://codervent.gumroad.com/l/rocker" target="_blank" class="btn btn-primary radius-10">Upgrade to Pro!</a>
-        </div>
-    </div>
 </div>

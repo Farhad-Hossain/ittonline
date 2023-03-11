@@ -23,6 +23,7 @@
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="{{asset('assets/css/semi-dark.css')}}" />
 	<title>{{$title}}</title>
+	@stack('custom_styles')
 </head>
 
 <body>
@@ -411,7 +412,7 @@
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
 		<footer class="page-footer">
-			<p class="mb-0">Copyright © 2021. All right reserved.</p>
+			<p class="mb-0">Copyright © {{date('Y')}}. All right reserved.</p>
 		</footer>
 	</div>
 	<!--end wrapper-->
@@ -426,7 +427,7 @@
 	<!--app JS-->
 	<script src="{{asset('assets/js/app.js')}}"></script>
 
-	@yield('custom_scripts')
+	@stack('custom_scripts')
 </body>
 
 </html>

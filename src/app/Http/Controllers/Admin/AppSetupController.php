@@ -17,9 +17,9 @@ class AppSetupController extends Controller
     public function appSettings(Request $req)
     {
         if ($req->method() == 'GET') {
-            $basicInfo = AppBasicInfo::first() ? (object)AppBasicInfo::first() : null;
+            $basicInfo = AppBasicInfo::first();
         } else if ($req->method() == 'POST') {
-            $basicInfo = AppBasicInfo::first() or new AppBasicInfo();
+            $basicInfo = AppBasicInfo::first() != null ? AppBasicInfo::first() : new AppBasicInfo();
             $basicInfo->app_name = $req->app_name or '';
             $basicInfo->short_address = $req->short_address or '';
             $basicInfo->mobile_number = $req->mobile_no or '';

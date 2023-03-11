@@ -7,10 +7,10 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <p class="mb-0">Total Orders</p>
+                            <p class="mb-0">Total Contacts</p>
                             <h4 class="my-1 text-primary">845</h4>
                         </div>
-                        <div class="text-primary ms-auto font-35"><i class="bx bx-cart-alt"></i>
+                        <div class="text-primary ms-auto font-35">{{-- <i class="bx bx-cart-alt"></i> --}}
                         </div>
                     </div>
                 </div>
@@ -21,10 +21,24 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <p class="mb-0">Total Income</p>
-                            <h4 class="my-1 text-success">$89,245</h4>
+                            <p class="mb-0">Total Quote</p>
+                            <h4 class="my-1 text-success">45</h4>
                         </div>
-                        <div class="text-success ms-auto font-35"><i class="bx bx-dollar"></i>
+                        <div class="text-success ms-auto font-35">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-success border-start border-0 border-4">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0">Total Courses</p>
+                            <h4 class="my-1 text-success">25</h4>
+                        </div>
+                        <div class="text-success ms-auto font-35">
                         </div>
                     </div>
                 </div>
