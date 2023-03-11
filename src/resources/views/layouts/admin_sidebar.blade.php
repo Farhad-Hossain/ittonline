@@ -48,9 +48,6 @@
                 <li> 
                     <a href="{{route('admin.page_content.free_quote')}}"><i class="bx bx-right-arrow-alt"></i>Free Quote</a>
                 </li>
-                <li> 
-                    <a href="{{route('admin.page_content.contact')}}"><i class="bx bx-right-arrow-alt"></i>Contact</a>
-                </li>
             </ul>
         </li>
         
