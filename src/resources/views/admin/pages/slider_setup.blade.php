@@ -6,7 +6,9 @@
         <div class="h4" style="color: rgb(80, 80, 80)">Slider Images</div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" id="slider-img-add-btn" data-bs-toggle="modal">Add Image</button>
+                <button type="button" class="btn btn-primary" id="slider-img-add-btn" data-bs-toggle="modal" data-slider_secondary_title="" data-slider_primary_title="">
+                    Add Image
+                </button>
             </div>
         </div>
     </div>
@@ -79,7 +81,7 @@
     </form>
 @endsection
 
-@section('custom_scripts')
+@push('custom_scripts')
 <script>
     $(document).ready(function () {
         $(document).on('click', "#slider-img-add-btn, .slider-img-edit-btn", function () {
@@ -99,4 +101,4 @@
         })
     });
 </script>
-@endsection
+@endpush

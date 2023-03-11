@@ -8,8 +8,8 @@
 	<!--favicon-->
 	<link rel="icon" href="{{asset($appInfo ? $appInfo->logo_url : '')}}" type="image/png" />
 	<!--plugins-->
-	<link href="{{asset('assets/simplebar/css/simplebar.css')}}" rel="stylesheet" />
-	<link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
+	<link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
+	{{-- <link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" /> --}}
 	<link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
 	<!-- loader-->
 	<link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet" />
@@ -133,7 +133,7 @@
 										<a class="dropdown-item" href="javascript:;">
 											<div class="d-flex align-items-center">
 												<div class="user-online">
-													<img src="{{asset('assets/images/avatars/avatar-1.png')}}" class="msg-avatar" alt="">
+													<img src="" class="msg-avatar" alt="">
 												</div>
 												<div class="flex-grow-1">
 													<h6 class="msg-name">Daisy Anderson 
@@ -217,7 +217,7 @@
 	<script src="{{asset('assets/js/jquery.min.js')}}"></script>
 	<script src="{{asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
 	<script src="{{asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-	<script src="{{asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+	{{-- <script src="{{asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script> --}}
 	<!--app JS-->
 	<script src="{{asset('assets/js/app.js')}}"></script>
 
