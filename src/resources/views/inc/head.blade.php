@@ -6,7 +6,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{{asset('frontend')}}/img/favicon.ico" rel="icon">
+    <link rel="icon" href="{{asset($appInfo ? $appInfo->logo_url : '')}}" type="image/png" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

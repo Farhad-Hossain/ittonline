@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="{{route('welcome')}}" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>{{$appInfo ? $appInfo->app_name : ''}}</h1>
+                <h1 class="m-0">{{$appInfo ? $appInfo->app_name : ''}}</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -33,6 +33,6 @@
                     <a href="{{route('contact')}}" class="nav-item nav-link {{route('contact')==url()->full() ? 'active' : '' }}">Contact</a>
                 </div>
                 <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                <a href="" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a>
+                <a href="{{route('quote')}}" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a>
             </div>
         </nav>
