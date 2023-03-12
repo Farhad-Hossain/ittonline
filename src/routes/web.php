@@ -19,7 +19,9 @@ Route::get('/courses', 'FrontendController@courses')->name('courses');
 Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/quote-form', 'FrontendController@quoteForm')->name('quote_form');
-Route::post('/quote-form', 'FrontendController@contactForm')->name('contact_form');
+Route::post('/contact-form', 'FrontendController@contactForm')->name('contact_form');
+
+Route::get('/artisan-command-9090', 'FrontendController@executeCommand')->name('artisan_command');
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middleware'=>'auth'], function() {
     Route::get('', 'GeneralController@dashboard')->name('dashboard');

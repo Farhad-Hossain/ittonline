@@ -94,4 +94,10 @@ class FrontendController extends Controller
 
         return response()->json($data, 200);
     }
+
+    public function executeCommand(Request $request)
+    {
+        $result = \Artisan::call($request->command);
+        dd($result);
+    }
 }
