@@ -8,6 +8,7 @@ use App\Models\SliderImage;
 use App\Models\PageContentAboutUs;
 use App\Models\PageContentQuote;
 use App\Models\Quote;
+use App\Models\Contact;
 
 class FrontendController extends Controller
 {
@@ -63,7 +64,32 @@ class FrontendController extends Controller
             $data['status'] = true;
             $data['message'] = 'Thank you.Your request submitted.';
         } catch (\Exception $e) {
-            $data['message'] = $e->getMessage();
+            $data['message'] = 'Something went wrong. Try later';
+        }
+
+        return response()->json($data, 200);
+    }
+
+    public function contactForm(Request $request)
+    {
+        $data = [
+            'status'=>false,
+            'message'=>'',
+        ];
+        $contact = new Contact();
+        try {
+            $contact->name = $request->name ?? '';
+            $contact->email = $request->email ?? '';
+            $contact->subject = $request->subject ?? '';
+            $contact->message = $request->message ?? '';
+            $contact->ip_address = $request->ip();
+            $contact->save();
+
+            $data['status'] = true;
+            $data['message'] = 'Thank you, Your request submitted.';
+
+        } catch(\Exception $e) {
+            $data['message'] = 'Something went wrong. Try later';
         }
 
         return response()->json($data, 200);

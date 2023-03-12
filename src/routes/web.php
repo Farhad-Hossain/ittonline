@@ -19,6 +19,7 @@ Route::get('/courses', 'FrontendController@courses')->name('courses');
 Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/quote-form', 'FrontendController@quoteForm')->name('quote_form');
+Route::post('/quote-form', 'FrontendController@contactForm')->name('contact_form');
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middleware'=>'auth'], function() {
     Route::get('', 'GeneralController@dashboard')->name('dashboard');
@@ -27,7 +28,8 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
     Route::match(['POST'], 'slider-edit-add', 'AppSetupController@sliderAddEdit')->name('slider_add_edit');
     Route::match(['POST'], 'slider-img-delete', 'AppSetupController@sliderDelete')->name('slider_img_delete');
 
-    // Route::match(['GET'], 'all-quotes', '');
+    Route::match(['GET'], 'quotes', 'QuotesController@quotes')->name('quotes');
+    Route::match(['GET'], 'contacts', 'ContactsController@contacts')->name('contacts');
 
     Route::group(['prefix'=>'page-content', 'as'=>'page_content.'], function () {
         Route::match(["GET","POST"],'about-us', 'PageContentController@aboutUs')->name('about_us');

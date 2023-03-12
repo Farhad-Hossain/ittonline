@@ -76,6 +76,22 @@
                     }
                 });
             });
+            $(document).on('submit', '#contact-form', function (event) {
+                event.preventDefault();
+                let target = $(this).attr('action');
+                let formData = $("#contact-form").serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: target,
+                    data: formData,
+                    processData:false,
+                    ContentType:false,
+                    success: function (data) {
+                        $("#contact-msg").text(data.message).removeClass('d-none');
+                        $("#contact-form").trigger('reset');
+                    }
+                });
+            });
         });
     </script>
 </body>

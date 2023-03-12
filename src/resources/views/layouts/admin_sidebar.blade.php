@@ -88,14 +88,14 @@
             </ul>
         </li>
         <li>
-            <a href="charts-chartjs.html">
+            <a href="{{route('admin.quotes')}}">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>
                 <div class="menu-title">Quotes</div>
             </a>
         </li>
         <li>
-            <a href="table-datatable.html">
+            <a href="{{route('admin.contacts')}}">
                 <div class="parent-icon"> <i class="bx bx-video-recording"></i>
                 </div>
                 <div class="menu-title">Contacts</div>
