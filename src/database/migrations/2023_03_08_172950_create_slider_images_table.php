@@ -13,6 +13,7 @@ class CreateSliderImagesTable extends Migration
      */
     public function up()
     {
+        if(Schema::hasTable('slider_images')) return;
         Schema::create('slider_images', function (Blueprint $table) {
             $table->id();
             $table->string('image_url');

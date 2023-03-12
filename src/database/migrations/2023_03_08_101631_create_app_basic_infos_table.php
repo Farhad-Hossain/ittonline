@@ -13,6 +13,7 @@ class CreateAppBasicInfosTable extends Migration
      */
     public function up()
     {
+        if(Schema::hasTable('app_basic_infos')) return;
         Schema::create('app_basic_infos', function (Blueprint $table) {
             $table->id();
             $table->string('app_name')->unique();

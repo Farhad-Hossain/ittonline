@@ -13,6 +13,7 @@ class CreatePageContentAboutUsTable extends Migration
      */
     public function up()
     {
+        if(Schema::hasTable('page_content_about_us')) return;
         Schema::create('page_content_about_us', function (Blueprint $table) {
             $table->id();
             $table->string('heading_line')->nullable();

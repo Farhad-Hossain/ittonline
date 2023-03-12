@@ -13,6 +13,7 @@ class CreateQuotesTable extends Migration
      */
     public function up()
     {
+        if(Schema::hasTable('quotes')) return;
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->string('name');

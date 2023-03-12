@@ -13,6 +13,7 @@ class CreatePageContentQuotesTable extends Migration
      */
     public function up()
     {
+        if(Schema::hasTable('page_content_quotes')) return;
         Schema::create('page_content_quotes', function (Blueprint $table) {
             $table->id();
             $table->string('heading_line')->nullable();
