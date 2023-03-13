@@ -8,7 +8,7 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <p class="mb-0">Total Contacts</p>
-                            <h4 class="my-1 text-primary">845</h4>
+                            <h4 class="my-1 text-primary">{{ $totalContacts ? $totalContacts : 0 }}</h4>
                         </div>
                         <div class="text-primary ms-auto font-35">{{-- <i class="bx bx-cart-alt"></i> --}}
                         </div>
@@ -21,8 +21,8 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <p class="mb-0">Total Quote</p>
-                            <h4 class="my-1 text-success">45</h4>
+                            <p class="mb-0">Total Quotes</p>
+                            <h4 class="my-1 text-success">{{$totalQuotes ? $totalQuotes : 0 }}</h4>
                         </div>
                         <div class="text-success ms-auto font-35">
                         </div>

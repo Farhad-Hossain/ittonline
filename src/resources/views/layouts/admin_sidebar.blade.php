@@ -101,6 +101,13 @@
                 <div class="menu-title">Contacts</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('admin.stuffs')}}">
+                <div class="parent-icon"> <i class="bx bx-video-recording"></i>
+                </div>
+                <div class="menu-title">Trainer</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </div>
