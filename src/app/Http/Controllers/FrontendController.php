@@ -9,6 +9,7 @@ use App\Models\PageContentAboutUs;
 use App\Models\PageContentQuote;
 use App\Models\Quote;
 use App\Models\Contact;
+use App\Models\Stuff;
 
 class FrontendController extends Controller
 {
@@ -17,10 +18,12 @@ class FrontendController extends Controller
         $sliders = SliderImage::all();
         $contentAbout = PageContentAboutUs::first();
         $contentQuote = PageContentQuote::first();
+        $stuffs = Stuff::where('is_active', 1)->get();
         return view('welcome', [
             'sliders'=>$sliders, 
             'contentAbout'=>$contentAbout,
             'contentQuote'=>$contentQuote,
+            'stuffs'=>$stuffs,
         ]);
     }
 

@@ -33,6 +33,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
     Route::match(['GET'], 'quotes', 'QuotesController@quotes')->name('quotes');
     Route::match(['GET'], 'contacts', 'ContactsController@contacts')->name('contacts');
     Route::match(['GET'], 'stuffs', 'StuffController@stuffs')->name('stuffs');
+    Route::match(['POST'], 'stuffs/add', 'StuffController@addStuff')->name('stuff.add');
 
     Route::group(['prefix'=>'page-content', 'as'=>'page_content.'], function () {
         Route::match(["GET","POST"],'about-us', 'PageContentController@aboutUs')->name('about_us');
