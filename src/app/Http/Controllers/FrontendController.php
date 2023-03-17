@@ -10,6 +10,7 @@ use App\Models\PageContentQuote;
 use App\Models\Quote;
 use App\Models\Contact;
 use App\Models\Stuff;
+use App\Models\Course;
 
 class FrontendController extends Controller
 {
@@ -19,23 +20,33 @@ class FrontendController extends Controller
         $contentAbout = PageContentAboutUs::first();
         $contentQuote = PageContentQuote::first();
         $stuffs = Stuff::where('is_active', 1)->get();
+        $courses = Course::all();
         return view('welcome', [
             'sliders'=>$sliders, 
             'contentAbout'=>$contentAbout,
             'contentQuote'=>$contentQuote,
             'stuffs'=>$stuffs,
+            'courses'=>$courses,
         ]);
     }
 
     public function about(Request $request) 
     {
         $content = PageContentAboutUs::first();
-        return view('pages.about', ['contentAbout'=>$content]);
+        $stuffs = Stuff::where('is_active', 1)->get();
+        return view('pages.about', ['contentAbout'=>$content, 'stuffs'=>$stuffs]);
     }
 
     public function courses (Request $request)
     {
-        return view('pages.courses');
+        $courses = Course::all();
+        return view('pages.courses', ['courses'=>$courses]);
+    }
+    public function courseDetails(Request $request, $course_id)
+    {
+        $course = Course::findOrFail($course_id);
+        $stuffs = Stuff::where('is_active', 1)->get();
+        return view('pages.course_details', ['course'=>$course, 'stuffs'=>$stuffs]);
     }
 
     public function getQuote (Request $request)

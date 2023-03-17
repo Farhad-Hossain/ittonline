@@ -83,7 +83,7 @@
                     <a href="{{route('admin.course.all')}}"><i class="bx bx-right-arrow-alt"></i>All Courses</a>
                 </li>
                 <li> 
-                    <a href="{{route('admin.course.add_course')}}"><i class="bx bx-right-arrow-alt"></i>Create Course</a>
+                    <a href="{{route('admin.course.save')}}"><i class="bx bx-right-arrow-alt"></i>Add Course</a>
                 </li>
             </ul>
         </li>

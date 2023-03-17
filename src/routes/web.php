@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('', 'FrontendController@welcome')->name('welcome');
 Route::get('/about', 'FrontendController@about')->name('about');
 Route::get('/courses', 'FrontendController@courses')->name('courses');
+Route::get('/course-details/{id}', 'FrontendController@courseDetails')->name('course_details');
 Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/quote-form', 'FrontendController@quoteForm')->name('quote_form');
@@ -44,7 +45,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
     // Course is service
     Route::group(['prefix'=>'courses', 'as'=>'course.'], function () {
         Route::match(['GET'], '/', 'ServiceController@services')->name('all');
-        Route::match(['GET', 'POST'], 'add-course', 'ServiceController@addService')->name('add_course');
+        Route::match(['GET', 'POST'], 'save-course', 'ServiceController@saveService')->name('save');
     });
 });
 
