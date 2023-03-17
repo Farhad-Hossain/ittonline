@@ -55,7 +55,8 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#summernote').html('{{$course ? $course->course_details : ""}}');
+        let html = `{{$course ? $course->course_details : '' }}`;
+        $('#summernote').html(html);
         $('#summernote').summernote({
             height: 200,
             toolbar: [

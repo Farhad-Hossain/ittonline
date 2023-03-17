@@ -24,7 +24,7 @@
                         </div>
                         --}}
                         <h4 class="mb-3">{{ $course->course_title }}</h4>
-                        <p>{!! $course->course_details !!}</p>
+                        <p>{{ mb_substr(strip_tags($course->course_details), 0, 80) }} . . .</p>
                         <a class="text-uppercase" href="{{route('course_details', [$course->id,])}}">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
