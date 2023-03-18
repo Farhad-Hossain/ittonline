@@ -39,23 +39,23 @@
                     <hr />
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="" class="form-label">Facebook</label>
+                            <label for="" class="form-label">Facebook <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="facebook" value="{{$basicInfo ? $basicInfo['facebook'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="" class="form-label">Twitter</label>
+                            <label for="" class="form-label">Twitter <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="twitter" value="{{$basicInfo ? $basicInfo['twitter'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="" class="form-label">Instagram</label>
+                            <label for="" class="form-label">Instagram <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="instagram" value="{{$basicInfo ? $basicInfo['instagram'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="" class="form-label">Linkedin</label>
+                            <label for="" class="form-label">Linkedin <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="linkedin" value="{{$basicInfo ? $basicInfo['linkedin'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="" class="form-label">Youtube</label>
+                            <label for="" class="form-label">Youtube <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="youtube" value="{{$basicInfo ? $basicInfo['youtube'] : ''}}">
                         </div>
                     </div>

@@ -17,7 +17,14 @@ class StuffController extends Controller
 
     public function addStuff(Request $request)
     {
-        $stuff = new Stuff();
+        $action = 'create';
+        if ( $request->id and $request->id > 0 ) {
+            $stuff = Stuff::findOrFail($request->id);
+            $action = 'edit';
+        } else {
+            $stuff = new Stuff();
+        }
+        
         $stuff->full_name = $request->name;
         $stuff->designation = $request->designation;
         $stuff->email = $request->email ?? '';
@@ -29,12 +36,17 @@ class StuffController extends Controller
         $stuff->is_active = 1;
         $stuff->created_by = Auth::user()->id;
         $stuff->ip_address = $request->ip();
-        if ( !$request->photo ) return redirect()->back()->with('danger', 'Stuff photo Required');
-        $fileName = time().$request->photo->extension();
-        $request->photo->move(public_path('images'), $fileName);
-        $photoPath = 'images/'.$fileName;
-        $stuff->photo = $photoPath;
 
+        if ( !$request->photo && $action == 'create' ) return redirect()->back()->with('danger', 'Photo Required');
+        
+        if ( $action == 'edit' && !$request->photo ) {
+            $photoPath = $stuff->photo;
+        } else {
+            $fileName = time().$request->photo->extension();
+            $request->photo->move(public_path('images'), $fileName);
+            $photoPath = 'images/'.$fileName;
+        }
+        $stuff->photo = $photoPath;
         $stuff->save();
         return redirect()->back()->with('success', 'Stuff created successfully');
     }

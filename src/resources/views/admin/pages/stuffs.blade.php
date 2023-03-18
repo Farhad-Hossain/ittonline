@@ -24,6 +24,7 @@
                         <th>Instagram</th>
                         <th>Linkedin</th>
                         <th>Created at</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,19 @@
                         <td>{{$stuff->instagram ?? ''}}</td>
                         <td>{{$stuff->linkedin ?? ''}}</td>
                         <td>{{$stuff->created_at->format('Y-m-d, H:i:s')}}</td>
+                        <td>
+                            <button class="edit-btn btn btn-primary btn-sm" data-full_name="{{$stuff->full_name}}"
+                                       data-id="{{$stuff->id}}"
+                                       data-designation="{{$stuff->designation}}"
+                                       data-mobile_number="{{$stuff->mobile_number}}"
+                                       data-email="{{$stuff->email}}"
+                                       data-twitter="{{$stuff->twitter}}"
+                                       data-facebook="{{$stuff->facebook}}"
+                                       data-instagram="{{$stuff->instagram}}"
+                                       data-linkedin="{{$stuff->linkedin}}">
+                                Edit
+                            </button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -58,43 +72,44 @@
       </div>
       <form action="{{route('admin.stuff.add')}}" method="POST" enctype="multipart/form-data">
       @csrf
+      <input type="hidden" name="id" class="form-control" id="fi-id" value="0" required>
       <div class="modal-body">
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" id="fi-name" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Designation <span class="text-danger">*</span></label>
-                <input type="text" name="designation" class="form-control" required>
+                <input type="text" name="designation" id="fi-designation" class="form-control" required>
             </div>
             <div class="col-md-12 form-group">
-                <label for="" class="form-label">Photo <span class="text-danger">*</span></label>
-                <input type="file" name="photo" class="form-control" required>
+                <label for="" class="form-label">Photo <span class="text-danger" id="photo-help-text">*</span></label>
+                <input type="file" name="photo" id="fi-photo" class="form-control" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Mobile No.</label>
-                <input type="text" name="mobile_no" class="form-control">
+                <input type="text" name="mobile_no" id="fi-mobile_no" class="form-control">
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" >
+                <input type="email" name="email" id="fi-email" class="form-control" >
             </div>
             <div class="col-md-6 form-group">
-                <label for="" class="form-label">Twitter</label>
-                <input type="text" name="twitter" class="form-control" >
+                <label for="" class="form-label">Twitter <small>(Full url)</small></label>
+                <input type="text" name="twitter" id="fi-twitter" class="form-control" >
             </div>
             <div class="col-md-6 form-group">
-                <label for="" class="form-label">Facebook</label>
-                <input type="text" name="facebook" class="form-control" >
+                <label for="" class="form-label">Facebook <small>(Full url)</small></label>
+                <input type="text" name="facebook" id="fi-facebook" class="form-control" >
             </div>
             <div class="col-md-6 form-group">
-                <label for="" class="form-label">Instagram</label>
-                <input type="text" name="instagram" class="form-control" >
+                <label for="" class="form-label">Instagram <small>(Full url)</small></label>
+                <input type="text" name="instagram" id="fi-instagram" class="form-control" >
             </div>
             <div class="col-md-6 form-group">
-                <label for="" class="form-label">Linkedin</label>
-                <input type="text" name="linkedin" class="form-control" >
+                <label for="" class="form-label">Linkedin <small>(Full url)</small></label>
+                <input type="text" name="linkedin" id="fi-linkedin" class="form-control" >
             </div>
         </div>
       </div>
@@ -115,6 +130,25 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
+
+        $(".edit-btn").click(function () {
+            $("#fi-id").val($(this).data('id'));
+            $("#fi-name").val($(this).data('full_name'));
+            $("#fi-designation").val($(this).data('designation'));
+            $("#fi-mobile_no").val($(this).data('mobile_number'));
+            $("#fi-email").val($(this).data('email'));
+            $("#fi-twitter").val($(this).data('twitter'));
+            $("#fi-facebook").val($(this).data('facebook'));
+            $("#fi-instagram").val($(this).data('instagram'));
+            $("#fi-linkedin").val($(this).data('linkedin'));
+            
+            $("#fi-photo").attr('required', false);
+            $("#photo-help-text").html('');
+            $("#stuffAddModalLabel").text('Edit Stuff Info');
+
+            $("#stuff-add-modal").modal('show');
+        });
     } );
+
 </script>
 @endpush
