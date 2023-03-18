@@ -1,4 +1,4 @@
-@extends('layouts.admin_master', ['title'=>'Quotes'])
+@extends('layouts.admin_master', ['title'=>'Trainers'])
 
 @push('custom_styles')
 <link href="{{asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
