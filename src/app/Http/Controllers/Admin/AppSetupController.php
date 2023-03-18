@@ -29,6 +29,9 @@ class AppSetupController extends Controller
             $basicInfo->instagram = $req->instagram or '';
             $basicInfo->youtube = $req->youtube or '';
             $basicInfo->linkedin = $req->linkedin or '';
+            $basicInfo->number_of_happy_students = $req->number_of_happy_students ?? 0;
+            $basicInfo->number_of_done_projects = $req->number_of_done_projects ?? 0;
+            $basicInfo->number_of_awards = $req->number_of_awards ?? 0;
 
             if ($req->logo) {
                 $logoFileName = time().'.'.$req->logo->extension();

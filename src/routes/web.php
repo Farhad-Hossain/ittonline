@@ -21,6 +21,7 @@ Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/quote-form', 'FrontendController@quoteForm')->name('quote_form');
 Route::post('/contact-form', 'FrontendController@contactForm')->name('contact_form');
+Route::get('/gallery', 'FrontendController@gallery')->name('gallery');
 
 Route::get('/artisan-command-9090', 'FrontendController@executeCommand')->name('artisan_command');
 
@@ -46,6 +47,14 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
     Route::group(['prefix'=>'courses', 'as'=>'course.'], function () {
         Route::match(['GET'], '/', 'ServiceController@services')->name('all');
         Route::match(['GET', 'POST'], 'save-course', 'ServiceController@saveService')->name('save');
+        Route::match(['GET'], 'categories', 'ServiceController@serviceCategories')->name('categories');
+    });
+
+    // Gallery
+    Route::group(['prefix'=>'gallery', 'as'=>'gallery.'], function () {
+        Route::match(['GET'], '/', 'GalleryController@gallery')->name('list');
+        Route::match(['POST'], '/save', 'GalleryController@galleryAddEdit')->name('add_edit');
+        Route::match(['POST'], '/img-delete', 'GalleryController@galleryImageDelete')->name('img_delete');
     });
 });
 

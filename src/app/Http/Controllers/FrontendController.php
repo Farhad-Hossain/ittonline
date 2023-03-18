@@ -11,6 +11,7 @@ use App\Models\Quote;
 use App\Models\Contact;
 use App\Models\Stuff;
 use App\Models\Course;
+use App\Models\Gallery;
 
 class FrontendController extends Controller
 {
@@ -107,6 +108,12 @@ class FrontendController extends Controller
         }
 
         return response()->json($data, 200);
+    }
+
+    public function gallery(Request $request)
+    {   
+        $galleryImages = Gallery::all();
+        return view('pages.gallery', ['galleryImages'=>$galleryImages]);
     }
 
     public function executeCommand(Request $request)

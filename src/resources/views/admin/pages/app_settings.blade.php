@@ -6,7 +6,7 @@
         <div class="card radius-10">
             <div class="card-body">
                 <div>
-                    <h5 class="card-title">Basic Examples</h5>
+                    <h5 class="card-title">Basic Informations</h5>
                 </div>
                 <hr/>
                 <form action="{{route('admin.app_setup')}}" method="POST" enctype="multipart/form-data">
@@ -31,6 +31,21 @@
                         <div class="form-group col-md-12">
                             <label for="" class="form-label">Short Address</label>
                             <input type="text" class="form-control" name='short_address' value="{{$basicInfo ? $basicInfo->short_address : ''}}">
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="" class="form-label">Number of Students </label>
+                            <input type="number" class="form-control" name="number_of_happy_students" value="{{$basicInfo ? $basicInfo['number_of_happy_students'] : ''}}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="" class="form-label">Number of Courses Done  </label>
+                            <input type="number" class="form-control" name="number_of_done_projects" value="{{$basicInfo ? $basicInfo['number_of_done_projects'] : ''}}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="" class="form-label">Number of Awards  </label>
+                            <input type="number" class="form-control" name="number_of_awards" value="{{$basicInfo ? $basicInfo['number_of_awards'] : ''}}">
                         </div>
                     </div>
                     <div>

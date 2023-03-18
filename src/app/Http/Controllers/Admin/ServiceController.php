@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\ServiceCategory;
 use Auth;
 
 class ServiceController extends Controller
@@ -47,5 +48,11 @@ class ServiceController extends Controller
             return redirect()->back()->with('success', 'Course updated successfully.');
         } 
         return view('admin.pages.save_course', ['course'=>$course, 'title'=>$title]);
+    }
+
+    public function serviceCategories(Request $request)
+    {
+        $categories = ServiceCategory::all();
+        return view('admin.pages.service_categories', ['categories'=>$categories]);
     }
 }

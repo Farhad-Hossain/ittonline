@@ -12,6 +12,7 @@
                     <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About</a>
                     <a href="{{route('courses')}}" class="nav-item nav-link {{route('courses')==url()->full() ? 'active' : '' }}">Courses</a>
                     <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
+                    <a href="{{route('gallery')}}" class="nav-item nav-link {{route('gallery')==url()->full() ? 'active' : '' }}">Gallery</a>
                     {{--
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>

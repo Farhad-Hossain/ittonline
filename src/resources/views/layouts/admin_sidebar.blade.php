@@ -80,6 +80,9 @@
             </a>
             <ul>
                 <li> 
+                    <a href="{{route('admin.course.categories')}}"><i class="bx bx-right-arrow-alt"></i>Course Categories</a>
+                </li>
+                <li> 
                     <a href="{{route('admin.course.all')}}"><i class="bx bx-right-arrow-alt"></i>All Courses</a>
                 </li>
                 <li> 
@@ -106,6 +109,13 @@
                 <div class="parent-icon"> <i class="bx bx-video-recording"></i>
                 </div>
                 <div class="menu-title">Trainer</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('admin.gallery.list')}}">
+                <div class="parent-icon"> <i class="bx bx-video-recording"></i>
+                </div>
+                <div class="menu-title">Gallery</div>
             </a>
         </li>
     </ul>
