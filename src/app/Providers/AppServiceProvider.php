@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use \Illuminate\Support\Facades\View;
 use App\Models\AppBasicInfo;
+use App\Models\ServiceCategory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,10 +30,12 @@ class AppServiceProvider extends ServiceProvider
         View::share('appInfo', $appInfo);
 
         $currentUrl = url()->full();
+        $courseCategories = ServiceCategory::has('services')->get();
         View::share([
             'currentUrl'=>$currentUrl,
             'title'=>$appInfo ? $appInfo->app_name : '',
-            'nav_title'=>''
+            'nav_title'=>'',
+            'courseCategories'=>$courseCategories,
         ]);
     }
 }

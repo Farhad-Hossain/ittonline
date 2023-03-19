@@ -48,6 +48,8 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
         Route::match(['GET'], '/', 'ServiceController@services')->name('all');
         Route::match(['GET', 'POST'], 'save-course', 'ServiceController@saveService')->name('save');
         Route::match(['GET'], 'categories', 'ServiceController@serviceCategories')->name('categories');
+        Route::match(['POST'], 'add-category', 'ServiceController@addServiceCategory')->name('add_category');
+        Route::match(['POST'], 'edit-category', 'ServiceController@editServiceCategory')->name('edit_category');
     });
 
     // Gallery

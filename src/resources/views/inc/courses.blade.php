@@ -14,9 +14,9 @@
                     
                     <div class="blog-img position-relative overflow-hidden">
                         <img class="img-fluid" src="{{asset($course->thumbnail)}}" alt="">
-                        {{--
-                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design and Development</a>
-                        --}}
+                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{route('courses')}}?category_id={{$course->category->id}}">
+                            {{$course->category->name}}
+                        </a>
                     </div>
                     <div class="p-4">
                         {{--

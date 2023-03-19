@@ -40,7 +40,11 @@ class FrontendController extends Controller
 
     public function courses (Request $request)
     {
-        $courses = Course::all();
+        if ( $request->category_id ) {
+            $courses = Course::where('category_id', $request->category_id)->get();
+        } else {
+            $courses = Course::all();
+        }
         return view('pages.courses', ['courses'=>$courses]);
     }
     public function courseDetails(Request $request, $course_id)

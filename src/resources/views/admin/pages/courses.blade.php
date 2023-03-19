@@ -13,7 +13,7 @@
                     <tr>
                         <th>Course Title</th>
                         <th>Starting Date</th>
-                        <th>Duration(In hours)</th>
+                        <th>Duration(In Month)</th>
                         <th>Created By</th>
                         <th>Action</th>
                     </tr>
@@ -23,8 +23,8 @@
                     <tr>
                         <td>{{$course->course_title ?? ''}}</td>
                         <td>{{$course->starting_date ?? ''}}</td>
-                        <td>{{$course->total_hour}}</td>
-                        <td>{{$course->created_by}}</td>
+                        <td>{{$course->total_hours}}</td>
+                        <td>{{$course->createdBy->name}}</td>
                         <td>
                             <a href="{{route('admin.course.save')}}?course_id={{$course->id}}" class="btn btn-sm btn-primary">Edit</a>
                         </td>

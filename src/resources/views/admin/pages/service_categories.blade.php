@@ -8,7 +8,7 @@
 <div class="card">
     <div class="card-header d-flex justify-content-between">
         <span>Course Categories</span>
-        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#category-add-modal">Add Category</button>
+        <button type="button" class="btn btn-sm btn-primary" style="font-weight: bold;" data-bs-toggle="modal" data-bs-target="#category-add-modal">Add Category</button>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -16,6 +16,7 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Total Courses</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -23,8 +24,11 @@
                     @foreach($categories as $category)
                     <tr>
                         <td>{{$category->name ?? ''}}</td>
+                        <th>{{ $category->services()->count() }}</th>
                         <td>
-                            <button type="button" class="edit-btn btn btn-primary btn-sm">Edit</button>
+                            <button type="button" class="edit-btn btn btn-primary btn-sm" data-id="{{$category->id}}" data-name="{{$category->name}}">
+                                Edit
+                            </button>
                         </td>
                     </tr>
                     @endforeach
@@ -32,6 +36,66 @@
             </table>
         </div>
     </div>
+</div>
+
+<!-- Category Add / Edit modal -->
+<div class="modal fade" id="category-add-modal" tabindex="-1" role="dialog" aria-labelledby="categoryAddModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="categoryAddModalLabel">Create Category</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{route('admin.course.add_category')}}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <input type="hidden" name="id" class="form-control" id="fi-id" value="0" required>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label for="" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" class="form-control" id="fi-name" required>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Category Edit modal -->
+<div class="modal fade" id="category-edit-modal" tabindex="-1" role="dialog" aria-labelledby="categoryEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="categoryEditModalLabel">Edit Category</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{route('admin.course.edit_category')}}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <input type="hidden" name="id" class="form-control" id="fi-edit-id" value="0" required>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label for="" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" class="form-control" id="fi-edit-name" required>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
 </div>
 @endsection
 
@@ -41,6 +105,15 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
-        } );
+
+        $(document).on('click', '.edit-btn', function (){
+            $("#fi-edit-id").val($(this).data('id'));
+            $("#fi-edit-name").val($(this).data('name'));
+
+            $("#category-edit-modal").modal('show');
+        });
+
+
+    } );
 </script>
 @endpush

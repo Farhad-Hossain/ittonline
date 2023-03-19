@@ -41,18 +41,41 @@ class ServiceController extends Controller
 
             $course->thumbnail = $fileName;
             $course->course_details = $request->course_details;
+            $course->category_id = $request->category_id;
             $course->created_by = Auth::user()->id;
             $course->ip_address = $request->ip();
             $course->save();
 
             return redirect()->back()->with('success', 'Course updated successfully.');
         } 
-        return view('admin.pages.save_course', ['course'=>$course, 'title'=>$title]);
+        $categories = ServiceCategory::all();
+        return view('admin.pages.save_course', ['course'=>$course, 'title'=>$title, 'categories'=>$categories]);
     }
 
     public function serviceCategories(Request $request)
     {
-        $categories = ServiceCategory::all();
+        $categories = ServiceCategory::with('services')->get();
         return view('admin.pages.service_categories', ['categories'=>$categories]);
+    }
+
+    public function addServiceCategory(Request $request)
+    {
+        $name = $request->name;
+        $serviceCategory = new ServiceCategory();
+        $serviceCategory->name = $name;
+        $serviceCategory->save();
+
+        session()->flash('success', 'Category addedd successfully.');
+        return redirect()->route('admin.course.categories');
+    }
+
+    public function editServiceCategory(Request $request)
+    {
+        $id = $request->id;
+        $category = ServiceCategory::findOrFail($id);
+        $category->name = $request->name;
+
+        session()->flash('success', 'Category updated successfully.');
+        return redirect()->route('admin.course.categories');
     }
 }

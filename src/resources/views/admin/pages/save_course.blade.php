@@ -25,17 +25,29 @@
                             <label for="" class="form-label">Course Title</label>
                             <input type="text" name="course_title" class="form-control" value="{{$course ? $course->course_title : ''}}">
                         </div>
-                        <div class="col-md-12 form-group">
+                        <div class="col-md-6 form-group">
                             <label for="" class="form-label">Thumbnail Photo (.jpg, .jpeg, .png, .bmp)</label>
                             <input type="file" name="thumbnail" class="form-control" value="{{$course ? $course->thumbnail : ''}}">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="" class="form-label">Category</label>
+                            <select name="category_id" id="" class="form-control" required>
+                            <option value="">-- Select Category --</option>
+                                @foreach($categories as $category)
+                                    @php 
+                                        $isSelected = $course && $course->category_id==$category->id ? 'selected' : '';
+                                    @endphp
+                                    <option value="{{$category->id}}" {{ $isSelected }}>{{$category->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="" class="form-label">Starting Date</label>
                             <input type="date" name="starting_date" class="form-control" value="{{$course ? $course->starting_date : ''}}">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="" class="form-label">Total Hours</label>
-                            <input type="text" name="total_hours" class="form-control" value="{{$course ? $course->total_hours : ''}}">
+                            <label for="" class="form-label">Duration <small class="text-danger">*(In Month)</small></label>
+                            <input type="number" name="total_hours" class="form-control" value="{{$course ? $course->total_hours : ''}}">
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="" class="form-label">Course Details</label>

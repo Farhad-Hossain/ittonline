@@ -10,7 +10,16 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{{route('welcome')}}" class="nav-item nav-link {{route('welcome')==url()->full() ? 'active' : '' }}">Home</a>
                     <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About</a>
-                    <a href="{{route('courses')}}" class="nav-item nav-link {{route('courses')==url()->full() ? 'active' : '' }}">Courses</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="{{route('courses')}}" class="nav-link dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>
+                        <div class="dropdown-menu m-0">
+                        <a href="{{route('courses')}}" class="dropdown-item">All Courses</a>
+                            @foreach($courseCategories as $courseCategory)
+                                <a href="{{route('courses')}}?category_id={{$courseCategory->id}}" class="dropdown-item">{{$courseCategory->name}}</a>
+                            @endforeach
+                        </div>
+                    </div>
                     <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
                     <a href="{{route('gallery')}}" class="nav-item nav-link {{route('gallery')==url()->full() ? 'active' : '' }}">Gallery</a>
                     {{--
