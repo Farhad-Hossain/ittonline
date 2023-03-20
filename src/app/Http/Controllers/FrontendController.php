@@ -13,6 +13,7 @@ use App\Models\Stuff;
 use App\Models\Course;
 use App\Models\Gallery;
 use App\Models\Testimonial;
+use App\Models\PageContentWhyChooseUs;
 
 class FrontendController extends Controller
 {
@@ -24,13 +25,15 @@ class FrontendController extends Controller
         $stuffs = Stuff::where('is_active', 1)->get();
         $courses = Course::all();
         $testimonials = Testimonial::all();
+        $whyChooseUs = PageContentWhyChooseUs::first();
         return view('welcome', [
             'sliders'=>$sliders, 
             'contentAbout'=>$contentAbout,
             'contentQuote'=>$contentQuote,
             'stuffs'=>$stuffs,
             'courses'=>$courses,
-            'testimonials'=>$testimonials
+            'testimonials'=>$testimonials,
+            'whyChooseUs'=>$whyChooseUs,
         ]);
     }
 

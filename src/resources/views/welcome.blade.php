@@ -60,20 +60,20 @@
                                 <i class="fa fa-cubes text-white"></i>
                             </div>
                             <h4>Best In Training Industry</h4>
-                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>
+                            <p class="mb-0">{{$whyChooseUs ?  $whyChooseUs->content_best_it_training_industry : ''}}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-award text-white"></i>
                             </div>
                             <h4>Award Winning</h4>
-                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>
+                            <p class="mb-0">{{$whyChooseUs ? $whyChooseUs->content_award_winning : ''}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset('frontend')}}/img/feature.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset($whyChooseUs ? $whyChooseUs->middle_photo : '')}}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -83,14 +83,14 @@
                                 <i class="fa fa-users-cog text-white"></i>
                             </div>
                             <h4>Professional Trainers</h4>
-                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>
+                            <p class="mb-0">{{$whyChooseUs ? $whyChooseUs->content_professional_trainers : ''}}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-phone-alt text-white"></i>
                             </div>
                             <h4>24/7 Support</h4>
-                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>
+                            <p class="mb-0">{{$whyChooseUs ? $whyChooseUs->content_support : ''}}</p>
                         </div>
                     </div>
                 </div>

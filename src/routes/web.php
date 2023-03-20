@@ -41,6 +41,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
         Route::match(["GET","POST"],'about-us', 'PageContentController@aboutUs')->name('about_us');
         Route::match(["GET","POST"],'free-quote', 'PageContentController@freeQuote')->name('free_quote');
         Route::match(["GET","POST"],'contact', 'PageContentController@contact')->name('contact');
+        Route::match(["GET","POST"],'why-choose-us', 'PageContentController@whyChooseUs')->name('why_choose_us');
     });
 
     // Course is service

@@ -48,6 +48,9 @@
                 <li> 
                     <a href="{{route('admin.page_content.free_quote')}}"><i class="bx bx-right-arrow-alt"></i>Free Quote</a>
                 </li>
+                <li> 
+                    <a href="{{route('admin.page_content.why_choose_us')}}"><i class="bx bx-right-arrow-alt"></i>Why Choose Us</a>
+                </li>
             </ul>
         </li>
         

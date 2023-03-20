@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\PageContentAboutUs;
 use App\Models\PageContentQuote;
+use App\Models\PageContentWhyChooseUs;
 use Auth;
 
 class PageContentController extends Controller
@@ -71,6 +72,39 @@ class PageContentController extends Controller
 
         } else {
             return view('admin.pages.page_content.contact');
+        }
+    }
+
+    public function whyChooseUs(Request $request)
+    {
+        if ($request->method() == 'GET') {
+            $content = PageContentWhyChooseUs::first();
+            return view('admin.pages.page_content.why_choose_us', ['content'=>$content]);
+        } else {
+            $content = PageContentWhyChooseUs::first();
+            if ( !$content ) {
+                $content = new PageContentWhyChooseUs();
+            }
+            $content->content_best_it_training_industry = $request->content_best_it_training_industry;
+            $content->content_professional_trainers = $request->content_professional_trainers;
+            $content->content_award_winning = $request->content_award_winning;
+            $content->content_support = $request->content_support;
+
+            if ( $request->middle_photo ) {
+                $extension = $request->middle_photo->extension();
+                if ( !in_array($extension, $this->extensions) ) {
+                    return redirect()->back('danger', 'Only image file are allowed');
+                }
+                $fileName = time().'.'.$extension;
+                $request->middle_photo->move(public_path('images'), $fileName);
+                $photoPath = 'images/'.$fileName;
+            } else {
+                $photoPath = $content->middle_photo;
+            }
+            $content->middle_photo = $photoPath;
+
+            $content->save();
+            return back()->with('success', 'Saved successfully.');
         }
     }
 }
