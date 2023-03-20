@@ -27,6 +27,7 @@
                         <td>{{$course->createdBy->name}}</td>
                         <td>
                             <a href="{{route('admin.course.save')}}?course_id={{$course->id}}" class="btn btn-sm btn-primary">Edit</a>
+                            <button class="btn btn-sm btn-danger delete-btn" data-id="{{$course->id}}">Delete</button>
                         </td>
                     </tr>
                     @endforeach
@@ -34,6 +35,36 @@
             </table>
         </div>
     </div>
+</div>
+
+
+<!-- Course Delete modal -->
+<div class="modal fade" id="course-delete-modal" tabindex="-1" role="dialog" aria-labelledby="courseDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="courseDeleteModalLabel">Delete Course</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{route('admin.course.delete')}}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <input type="hidden" name="id" class="form-control" id="fi-delete-id" value="0" required>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Are sure want to delete ?</p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </div>
+      </form>
+    </div>
+  </div>
 </div>
 @endsection
 
@@ -43,6 +74,12 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
-        } );
+
+        $(document).on('click', '.delete-btn', function () {
+            $("#fi-delete-id").val($(this).data('id'));
+            $("#course-delete-modal").modal('show');
+        })
+    } );
+
 </script>
 @endpush

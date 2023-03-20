@@ -25,7 +25,7 @@
                             <input type="text" class="form-control" name='email' value="{{$basicInfo ? $basicInfo['email'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="" class="form-label">Logo</label>
+                            <label for="" class="form-label">Logo (3x2 image ratio preferrable)</label>
                             <input type="file" class="form-control" name='logo'>
                         </div>
                         <div class="form-group col-md-12">

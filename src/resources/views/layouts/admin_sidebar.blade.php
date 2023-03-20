@@ -118,6 +118,13 @@
                 <div class="menu-title">Gallery</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('admin.testimonial.list')}}">
+                <div class="parent-icon"> <i class="bx bx-comment"></i>
+                </div>
+                <div class="menu-title">Testimonials</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </div>

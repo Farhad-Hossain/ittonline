@@ -78,4 +78,11 @@ class ServiceController extends Controller
         session()->flash('success', 'Category updated successfully.');
         return redirect()->route('admin.course.categories');
     }
+
+    public function deleteService(Request $request)
+    {
+        $service = Course::findOrFail($request->id);
+        $service->delete();
+        return back()->with('success', 'Course Deleted Successfully');
+    }
 }

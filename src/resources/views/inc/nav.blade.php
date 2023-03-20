@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="{{route('welcome')}}" class="navbar-brand p-0">
-                <h1 class="m-0">{{$appInfo ? $appInfo->app_name : ''}}</h1>
+                <img src="{{asset($appInfo->logo_url)}}" style="width: 80px;" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>

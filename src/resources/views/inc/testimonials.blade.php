@@ -6,54 +6,20 @@
             <h1 class="mb-0">What Our Clients Say About Our Digital Services</h1>
         </div>
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+            @foreach($testimonials as $testimonial)
             <div class="testimonial-item bg-light my-4">
                 <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="{{asset('frontend')}}/img/testimonial-1.jpg" style="width: 60px; height: 60px;" >
+                    <img class="img-fluid rounded" src="{{asset($testimonial->photo)}}" style="width: 60px; height: 60px;" >
                     <div class="ps-4">
-                        <h4 class="text-primary mb-1">Client Name</h4>
-                        <small class="text-uppercase">Profession</small>
+                        <h4 class="text-primary mb-1">{{$testimonial->name}}</h4>
+                        <small class="text-uppercase">{{$testimonial->profession}}</small>
                     </div>
                 </div>
                 <div class="pt-4 pb-5 px-5">
-                    Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    {{$testimonial->speech}}
                 </div>
             </div>
-            <div class="testimonial-item bg-light my-4">
-                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="{{asset('frontend')}}/img/testimonial-2.jpg" style="width: 60px; height: 60px;" >
-                    <div class="ps-4">
-                        <h4 class="text-primary mb-1">Client Name</h4>
-                        <small class="text-uppercase">Profession</small>
-                    </div>
-                </div>
-                <div class="pt-4 pb-5 px-5">
-                    Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                </div>
-            </div>
-            <div class="testimonial-item bg-light my-4">
-                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="{{asset('frontend')}}/img/testimonial-3.jpg" style="width: 60px; height: 60px;" >
-                    <div class="ps-4">
-                        <h4 class="text-primary mb-1">Client Name</h4>
-                        <small class="text-uppercase">Profession</small>
-                    </div>
-                </div>
-                <div class="pt-4 pb-5 px-5">
-                    Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                </div>
-            </div>
-            <div class="testimonial-item bg-light my-4">
-                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="{{asset('frontend')}}/img/testimonial-4.jpg" style="width: 60px; height: 60px;" >
-                    <div class="ps-4">
-                        <h4 class="text-primary mb-1">Client Name</h4>
-                        <small class="text-uppercase">Profession</small>
-                    </div>
-                </div>
-                <div class="pt-4 pb-5 px-5">
-                    Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

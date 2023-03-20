@@ -47,6 +47,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
     Route::group(['prefix'=>'courses', 'as'=>'course.'], function () {
         Route::match(['GET'], '/', 'ServiceController@services')->name('all');
         Route::match(['GET', 'POST'], 'save-course', 'ServiceController@saveService')->name('save');
+        Route::match(['POST'], 'delete-course', 'ServiceController@deleteService')->name('delete');
         Route::match(['GET'], 'categories', 'ServiceController@serviceCategories')->name('categories');
         Route::match(['POST'], 'add-category', 'ServiceController@addServiceCategory')->name('add_category');
         Route::match(['POST'], 'edit-category', 'ServiceController@editServiceCategory')->name('edit_category');
@@ -57,6 +58,14 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
         Route::match(['GET'], '/', 'GalleryController@gallery')->name('list');
         Route::match(['POST'], '/save', 'GalleryController@galleryAddEdit')->name('add_edit');
         Route::match(['POST'], '/img-delete', 'GalleryController@galleryImageDelete')->name('img_delete');
+    });
+
+    // Testimonial
+    Route::group(['prefix'=>'testimonials', 'as'=>'testimonial.'], function() {
+        Route::match(['GET'], '/', 'TestimonialController@getList')->name('list');
+        Route::match(['POST'], '/add', 'TestimonialController@addTestimonial')->name('add');
+        Route::match(['POST'], '/edit', 'TestimonialController@editTestimonial')->name('edit');
+        Route::match(['POST'], '/delete', 'TestimonialController@deleteTestimonial')->name('delete');
     });
 });
 
