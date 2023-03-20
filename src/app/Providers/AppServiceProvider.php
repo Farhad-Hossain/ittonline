@@ -32,13 +32,11 @@ class AppServiceProvider extends ServiceProvider
 
         $currentUrl = url()->full();
         $courseCategories = ServiceCategory::has('services')->get();
-        $testimonials = Testimonial::all();
         View::share([
             'currentUrl'=>$currentUrl,
             'title'=>$appInfo ? $appInfo->app_name : '',
             'nav_title'=>'',
             'courseCategories'=>$courseCategories,
-            'testimonials'=>$testimonials,
         ]);
     }
 }

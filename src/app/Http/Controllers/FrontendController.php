@@ -12,6 +12,7 @@ use App\Models\Contact;
 use App\Models\Stuff;
 use App\Models\Course;
 use App\Models\Gallery;
+use App\Models\Testimonial;
 
 class FrontendController extends Controller
 {
@@ -22,12 +23,14 @@ class FrontendController extends Controller
         $contentQuote = PageContentQuote::first();
         $stuffs = Stuff::where('is_active', 1)->get();
         $courses = Course::all();
+        $testimonials = Testimonial::all();
         return view('welcome', [
             'sliders'=>$sliders, 
             'contentAbout'=>$contentAbout,
             'contentQuote'=>$contentQuote,
             'stuffs'=>$stuffs,
             'courses'=>$courses,
+            'testimonials'=>$testimonials
         ]);
     }
 
@@ -45,7 +48,8 @@ class FrontendController extends Controller
         } else {
             $courses = Course::all();
         }
-        return view('pages.courses', ['courses'=>$courses]);
+        $testimonials = Testimonial::all();
+        return view('pages.courses', ['courses'=>$courses, 'testimonials'=>$testimonials]);
     }
     public function courseDetails(Request $request, $course_id)
     {
