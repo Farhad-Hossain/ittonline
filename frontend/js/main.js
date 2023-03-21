@@ -6,11 +6,24 @@
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
+                $('.spinner').remove();
             }
         }, 1);
     };
     spinner();
-    
+
+    // carousel change spinner 
+    function hideSpinner()
+    {
+        $('#spinner').removeClass('show');
+    }
+
+    $(document).on('click', '.carousel-control-prev, .carousel-control-next', function (){
+        $('#spinner').addClass('show');
+        setTimeout(function () {
+            hideSpinner();
+        }, 500);
+    })
     
     // Initiate the wowjs
     new WOW().init();
