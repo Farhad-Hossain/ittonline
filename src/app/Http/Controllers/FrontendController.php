@@ -14,6 +14,7 @@ use App\Models\Course;
 use App\Models\Gallery;
 use App\Models\Testimonial;
 use App\Models\PageContentWhyChooseUs;
+use App\Models\ServiceCategory;
 
 class FrontendController extends Controller
 {

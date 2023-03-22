@@ -21,9 +21,10 @@
                 </div>
                 <a href="{{route('quote')}}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
             </div>
-            <div class="col-lg-5" style="max-height: 500px;">
+            <div class="col-lg-5" >
+                <h4>Duration : {{$course->total_hours}} Months</h4>
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($course ? $course->thumbnail : '')}}" style="">
+                    <img class="position-absolute w-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($course ? $course->thumbnail : '')}}" style="">
                 </div>
             </div>
         </div>
