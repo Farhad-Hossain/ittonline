@@ -42,10 +42,11 @@ class AppSetupController extends Controller
             }
             
             $basicInfo->logo_url = $logoPath;
-            $basicInfo->created_by = 1;
-            $basicInfo->updated_by = 1;
+            $basicInfo->location_google_map_embedded_link = $req->location_google_map_embedded_link ?? $basicInfo->location_google_map_embedded_link;
+            $basicInfo->created_by = Auth::user()->id;
+            $basicInfo->updated_by = Auth::user()->id;
             $basicInfo->created_ip = $req->ip();
-            $basicInfo->updated_ip = 1;
+            $basicInfo->updated_ip = $req->ip();
 
             $basicInfo->save();
 

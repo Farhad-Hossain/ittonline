@@ -75,6 +75,7 @@ class ServiceController extends Controller
         $category = ServiceCategory::findOrFail($id);
         $category->name = $request->name;
 
+        $category->save();
         session()->flash('success', 'Category updated successfully.');
         return redirect()->route('admin.course.categories');
     }

@@ -93,7 +93,9 @@
                 });
             });
         });
+        
     </script>
+    @stack('custom_scripts')
 </body>
 
 </html>

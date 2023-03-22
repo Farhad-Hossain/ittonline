@@ -69,9 +69,19 @@
                             <label for="" class="form-label">Linkedin <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="linkedin" value="{{$basicInfo ? $basicInfo['linkedin'] : ''}}">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="" class="form-label">Youtube <small class="text-danger">*( Full url )</small></label>
                             <input type="text" class="form-control" name="youtube" value="{{$basicInfo ? $basicInfo['youtube'] : ''}}">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="" class="form-label">Location Google Map (Embedded Link)  
+                                <div class="text-danger">
+                                    <a href="https://youtu.be/_QZA1GLGd08" target="_blank">See How to get embedded link</a> 
+                                </div>    
+                            </label>
+                            <textarea class="form-control" name="location_google_map_embedded_link" >
+                                {{$basicInfo ? $basicInfo['location_google_map_embedded_link'] : ''}}
+                            </textarea>
                         </div>
                     </div>
                     <div class="row mt-4">
