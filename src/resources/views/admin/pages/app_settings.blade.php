@@ -74,10 +74,10 @@
                             <input type="text" class="form-control" name="youtube" value="{{$basicInfo ? $basicInfo['youtube'] : ''}}">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="" class="form-label">Location Google Map (Embedded Link)  
-                                <div class="text-danger">
-                                    <a href="https://youtu.be/_QZA1GLGd08" target="_blank">See How to get embedded link</a> 
-                                </div>    
+                            <label for="" class="form-label">Paste here Google Map location (Embedded Link)  
+                                <span class="text-danger">
+                                    <a href="https://youtu.be/_QZA1GLGd08" target="_blank"> [ See How to get embedded link ]</a> 
+                                </span>    
                             </label>
                             <textarea class="form-control" name="location_google_map_embedded_link" >
                                 {{$basicInfo ? $basicInfo['location_google_map_embedded_link'] : ''}}
