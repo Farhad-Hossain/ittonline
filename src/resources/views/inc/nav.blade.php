@@ -12,11 +12,10 @@
                     <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About</a>
 
                     <div class="nav-item dropdown">
-                        <a href="{{route('courses')}}" class="nav-link dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>
+                        <a href="{{route('courses')}}" class="nav-link nav-item dropdown-main-item dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>
                         <div class="dropdown-menu m-0">
-                        <a href="{{route('courses')}}" class="dropdown-item">All Courses</a>
                             @foreach($courseCategories as $courseCategory)
-                                <a href="{{route('courses')}}?category_id={{$courseCategory->id}}" class="dropdown-item">{{$courseCategory->name}}</a>
+                            <a href="{{route('courses')}}?category_id={{$courseCategory->id}}" class="dropdown-item">{{$courseCategory->name}}</a>
                             @endforeach
                         </div>
                     </div>

@@ -43,6 +43,10 @@
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
+
+    $(document).on('click', '.dropdown-main-item', function (){
+        window.location = $(this).attr('href')
+    });
     
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
