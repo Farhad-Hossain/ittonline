@@ -14,27 +14,40 @@
                     <li class="nav-item dropdown">
                         <a href="{{route('courses')}}" class="nav-link nav-item dropdown-main-item dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>
                         <ul class="dropdown-menu m-0">
+                            @php $printedList = []; @endphp
                             @foreach($courseCategories as $courseCategory)
                             @php 
                                 $subCategories = $courseCategory->subCategories()->get(); 
                                 $hasSubCategories = $subCategories->count();
                             @endphp
+
+                            @if (!in_array($courseCategory->id, $printedList)) 
                             <li>
                                 <a href="{{route('courses')}}?category_id={{$courseCategory->id}}" class="dropdown-item">
                                     <span>{{$courseCategory->name}}</span> 
                                     @if($hasSubCategories) <span style="position:absolute; right: 7px;">&raquo;</span> @endif
                                 </a>
+                                @php $printedList[] = $courseCategory->id; @endphp
+
                                 @if($hasSubCategories)
                                 <ul class="dropdown-menu dropdown-submenu">
                                     @foreach($subCategories as $subCategory)
+                                    @if(!in_array($subCategory->id, $printedList))
                                     <li>
-                                        <a href="{{route('courses')}}?category_id={{$subCategory->id}}" class="dropdown-item">{{$subCategory->name}}</a>
+                                        <a href="{{route('courses')}}?category_id={{$subCategory->id}}" class="dropdown-item">
+                                            <span>{{$subCategory->name}}</span> 
+                                        </a>
+                                        @php $printedList[] = $courseCategory->id; @endphp
                                     </li>
+
+                                    @endif
+
                                     @endforeach
                                 </ul>
-                                @endif
-                                @endforeach
+                                @endif 
                             </li>
+                            @endif
+                            @endforeach
                         </ul>
                     </li>
 
