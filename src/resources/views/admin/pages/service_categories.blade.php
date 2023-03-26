@@ -16,6 +16,7 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Parent Category</th>
                         <th>Total Courses</th>
                         <th>Action</th>
                     </tr>
@@ -24,9 +25,11 @@
                     @foreach($categories as $category)
                     <tr>
                         <td>{{$category->name ?? ''}}</td>
+                        <td>{{$category->parentCategory ? $category->parentCategory->name : '-'}}</td>
                         <th>{{ $category->services()->count() }}</th>
                         <td>
-                            <button type="button" class="edit-btn btn btn-primary btn-sm" data-id="{{$category->id}}" data-name="{{$category->name}}">
+                            <button type="button" class="edit-btn btn btn-primary btn-sm" data-id="{{$category->id}}" data-name="{{$category->name}}" 
+                            data-parent_id="{{$category->parentCategory ? $category->parentCategory->id : 0}}">
                                 Edit
                             </button>
                         </td>
@@ -53,6 +56,15 @@
       <input type="hidden" name="id" class="form-control" id="fi-id" value="0" required>
       <div class="modal-body">
         <div class="row">
+            <div class="col-md-12 form-group">
+                <label for="" class="form-label" title="For main Category, Dont change value">Sub Category of <span class="text-danger">(Optional)</span></label>
+                <select name="parent_id" id="form-sub-category" class="form-control">
+                  <option value="0">--Select a category--</option>
+                  @foreach($categories as $category)
+                  <option value="{{$category->id}}">{{$category->name}}</option>
+                  @endforeach
+                </select>
+            </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
                 <input type="text" name="name" class="form-control" id="fi-name" required>
@@ -83,6 +95,15 @@
       <input type="hidden" name="id" class="form-control" id="fi-edit-id" value="0" required>
       <div class="modal-body">
         <div class="row">
+            <div class="col-md-12 form-group d-none">
+                <label for="" class="form-label" title="For main Category, Dont change value">Sub Category of <span class="text-danger">(Optional)</span></label>
+                <select name="parent_id" id="fi-edit-parent-category" class="form-control">
+                  <option value="" selected>--Select a category--</option>
+                  @foreach($categories as $category)
+                  <option value="{{$category->id}}">{{$category->name}}</option>
+                  @endforeach
+                </select>
+            </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
                 <input type="text" name="name" class="form-control" id="fi-edit-name" required>
@@ -109,11 +130,10 @@
         $(document).on('click', '.edit-btn', function (){
             $("#fi-edit-id").val($(this).data('id'));
             $("#fi-edit-name").val($(this).data('name'));
+            $("#fi-edit-parent-category").val($(this).data('parent_id')).change();
 
             $("#category-edit-modal").modal('show');
         });
-
-
     } );
 </script>
 @endpush

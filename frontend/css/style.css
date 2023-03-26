@@ -490,4 +490,16 @@ h6,
         margin-bottom: -75px;
     }
 }
+.dropdown-menu li {
+    position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+}
 

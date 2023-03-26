@@ -13,9 +13,17 @@ class ServiceCategory extends Model
 
     protected $guarded = [];
 
-
     public function services()
     {
         return $this->hasMany(Course::class, 'category_id', 'id');
+    }
+
+    public function subCategories(){
+        return $this->hasMany(ServiceCategory::class, 'parent_id');
+    }
+
+    public function parentCategory()
+    {
+        return $this->belongsTo(ServiceCategory::class, 'parent_id');
     }
 }

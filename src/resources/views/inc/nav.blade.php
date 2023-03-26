@@ -11,14 +11,33 @@
                     <a href="{{route('welcome')}}" class="nav-item nav-link {{route('welcome')==url()->full() ? 'active' : '' }}">Home</a>
                     <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About</a>
 
-                    <div class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a href="{{route('courses')}}" class="nav-link nav-item dropdown-main-item dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>
-                        <div class="dropdown-menu m-0">
+                        <ul class="dropdown-menu m-0">
                             @foreach($courseCategories as $courseCategory)
-                            <a href="{{route('courses')}}?category_id={{$courseCategory->id}}" class="dropdown-item">{{$courseCategory->name}}</a>
-                            @endforeach
-                        </div>
-                    </div>
+                            @php 
+                                $subCategories = $courseCategory->subCategories()->get(); 
+                                $hasSubCategories = $subCategories->count();
+                            @endphp
+                            <li>
+                                <a href="{{route('courses')}}?category_id={{$courseCategory->id}}" class="dropdown-item">
+                                    <span>{{$courseCategory->name}}</span> 
+                                    @if($hasSubCategories) <span style="position:absolute; right: 7px;">&raquo;</span> @endif
+                                </a>
+                                @if($hasSubCategories)
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    @foreach($subCategories as $subCategory)
+                                    <li>
+                                        <a href="{{route('courses')}}?category_id={{$subCategory->id}}" class="dropdown-item">{{$subCategory->name}}</a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                @endif
+                                @endforeach
+                            </li>
+                        </ul>
+                    </li>
+
                     <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
                     <div class="nav-item dropdown">
                         <a href="" class="nav-link nav-item dropdown-toggle {{route('gallery')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Gallery</a>

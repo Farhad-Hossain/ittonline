@@ -63,6 +63,11 @@ class ServiceController extends Controller
         $name = $request->name;
         $serviceCategory = new ServiceCategory();
         $serviceCategory->name = $name;
+        if ($request->parent_id) {
+            $serviceCategory->parent_id = $request->parent_id;
+        } else {
+            $serviceCategory->parent_id = 0;
+        }
         $serviceCategory->save();
 
         session()->flash('success', 'Category addedd successfully.');
@@ -74,6 +79,9 @@ class ServiceController extends Controller
         $id = $request->id;
         $category = ServiceCategory::findOrFail($id);
         $category->name = $request->name;
+        if ($request->parent_id) {
+            $category->parent_id = $request->parent_id;
+        }
 
         $category->save();
         session()->flash('success', 'Category updated successfully.');
