@@ -14,7 +14,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Happy Students</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $appInfo->number_of_happy_students }}</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $appInfo ? $appInfo->number_of_happy_students : '' }}</h1>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-primary mb-0">Courses Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">{{ $appInfo->number_of_done_projects }}</h1>
+                            <h1 class="mb-0" data-toggle="counter-up">{{ $appInfo ? $appInfo->number_of_done_projects : '' }}</h1>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Win Awards</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $appInfo->number_of_awards }}</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $appInfo ? $appInfo->number_of_awards : '' }}</h1>
                         </div>
                     </div>
                 </div>

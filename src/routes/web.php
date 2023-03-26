@@ -59,6 +59,10 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
         Route::match(['GET'], '/', 'GalleryController@gallery')->name('list');
         Route::match(['POST'], '/save', 'GalleryController@galleryAddEdit')->name('add_edit');
         Route::match(['POST'], '/img-delete', 'GalleryController@galleryImageDelete')->name('img_delete');
+
+        Route::match(['GET'], 'events', 'GalleryController@events')->name('events');
+        Route::match(['POST'], 'events/add-edit', 'GalleryController@eventAddEdit')->name('add_event');
+        Route::match(['POST'], 'events/delete', 'GalleryController@eventDelete')->name('delete_event');
     });
 
     // Testimonial

@@ -82,4 +82,18 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="photo_show_modal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+            <div class="modal-header border-0">
+                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <img src="" id="photo_modal_show_img_link" alt="" style="max-width: 90%;">
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Footer End -->

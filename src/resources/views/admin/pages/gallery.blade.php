@@ -6,7 +6,7 @@
         <div class="h4" style="color: rgb(80, 80, 80)">Gallery Images</div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" id="gallery-img-add-btn" data-image_id="0" data-bs-toggle="modal" data-title="">
+                <button type="button" class="btn btn-sm btn-primary" id="gallery-img-add-btn" data-image_id="0" data-bs-toggle="modal" data-title="">
                     Add Image
                 </button>
             </div>
@@ -23,9 +23,12 @@
                     <div class="card-header">
                         <h4>{{$galleryImage->title}}</h4>
                     </div>
+                    <div class="card-header py-0 my-0">
+                        <p>{{$galleryImage->event->event_name}}</p>
+                    </div>
                     <div class="card-body">
-                        <button class="btn btn-primary gallery-img-edit-btn" data-image_id="{{$galleryImage->id}}" data-title="{{$galleryImage->title}}">Edit</button>
-                        <button class="btn btn-danger gallery-img-delete-btn" data-image_id="{{$galleryImage->id}}">Delete</button>
+                        <button class="btn btn-sm btn-primary gallery-img-edit-btn" data-image_id="{{$galleryImage->id}}" data-event_id="{{$galleryImage->event_id}}" data-title="{{$galleryImage->title}}">Edit</button>
+                        <button class="btn btn-sm btn-danger gallery-img-delete-btn" data-image_id="{{$galleryImage->id}}">Delete</button>
                     </div>
                 </div>
             </div>
@@ -33,7 +36,7 @@
         @endif
     </div>
 
-    <!-- Modal for adding / Editing slider -->
+    <!-- Modal for adding / Editing gallery -->
     <div class="modal fade" id="gallery-add-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -50,6 +53,16 @@
                         <div class="col-sm-12 form-group">
                             <label for="" class="form-label">Select Image (jpg, jpeg, png, webp, bmp)</label>
                             <input type="file" class="form-control" name="gallery_image">
+                        </div>
+
+                        <div class="col-sm 12 form-group">
+                            <label for="" class="form-label">Select Event</label>
+                            <select name="event_id" class="form-control" id="form-event-id" required>
+                                <option value="">--Select Event--</option>
+                                @foreach($galleryEvents as $galleryEvent)
+                                <option value="{{$galleryEvent->id}}">{{$galleryEvent->event_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         
                         <div class="col-sm-12 form-group">
@@ -82,6 +95,7 @@
            if ( $(this).data('image_id') ) {
               $("#form-image-id").val($(this).data('image_id'));
               $("#form-image-title").val($(this).data('title'));
+              $("#form-event-id").val($(this).data('event_id')).change();
            }
            $("#gallery-add-edit-modal").modal('show');
         })

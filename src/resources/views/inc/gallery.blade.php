@@ -6,27 +6,23 @@
             <h1 class="mb-0">Our Significant Moments</h1>
         </div>
         <div class="row g-5">
-            @foreach($galleryImages as $galleryImage)
+            @foreach($galleryEvents as $galleryEvent)
+           
+            
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                <a href="{{route('gallery')}}?event={{$galleryEvent->event_name}}">
                 <div class="blog-item bg-light rounded overflow-hidden">
                     
                     <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{asset($galleryImage->img_url)}}" alt="">
-                        {{--
-                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design and Development</a>
-                        --}}
-                    </div>
-                    <div class="p-4">
-                        {{--
-                        <div class="d-flex mb-3">
-                            <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                            <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
-                        </div>
-                        --}}
-                        <h4 class="mb-3">{{ $galleryImage->title }}</h4>
+                        <img class="img-fluid" src="{{asset($galleryEvent->feature_photo)}}" alt="">
+                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4">
+                            {{$galleryEvent->event_name}}
+                        </a>
                     </div>
                 </div>
+                </a>
             </div>
+            
             @endforeach
         </div>
     </div>

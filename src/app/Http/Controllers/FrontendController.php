@@ -12,6 +12,7 @@ use App\Models\Contact;
 use App\Models\Stuff;
 use App\Models\Course;
 use App\Models\Gallery;
+use App\Models\GalleryEvent;
 use App\Models\Testimonial;
 use App\Models\PageContentWhyChooseUs;
 use App\Models\ServiceCategory;
@@ -125,7 +126,13 @@ class FrontendController extends Controller
     public function gallery(Request $request)
     {   
         $galleryImages = Gallery::all();
-        return view('pages.gallery', ['galleryImages'=>$galleryImages]);
+        $galleryEvents = GalleryEvent::orderBy('id', 'desc')->get();
+
+        if ( $request->event && GalleryEvent::where('event_name', $request->event)->exists() ) {
+            $galleryEvent = GalleryEvent::where('event_name', $request->event)->with('images')->first();
+            return view('pages.gallery_event_photos', ['galleryEvent'=>$galleryEvent]);
+        }
+        return view('pages.gallery', ['galleryImages'=>$galleryImages, 'galleryEvents'=>$galleryEvents]);
     }
 
     public function executeCommand(Request $request)

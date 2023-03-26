@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="{{route('welcome')}}" class="navbar-brand p-0">
-                <img src="{{asset($appInfo->logo_url)}}" style="width: 80px;" alt="">
+                <img src="{{asset($appInfo ? $appInfo->logo_url : '')}}" style="width: 80px;" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -20,7 +20,13 @@
                         </div>
                     </div>
                     <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
-                    <a href="{{route('gallery')}}" class="nav-item nav-link {{route('gallery')==url()->full() ? 'active' : '' }}">Gallery</a>
+                    <div class="nav-item dropdown">
+                        <a href="" class="nav-link nav-item dropdown-toggle {{route('gallery')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Gallery</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{{route('gallery')}}" class="dropdown-item">Events</a> 
+                        </div>
+                    </div>
+                    
                     {{--
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
@@ -41,7 +47,6 @@
                     --}}
                     <a href="{{route('contact')}}" class="nav-item nav-link {{route('contact')==url()->full() ? 'active' : '' }}">Contact</a>
                 </div>
-                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
                 <a href="{{route('quote')}}" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a>
             </div>
         </nav>

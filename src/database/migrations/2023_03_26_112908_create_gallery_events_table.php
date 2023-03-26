@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsLettersTable extends Migration
+class CreateGalleryEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateNewsLettersTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('news_letters')) return;
-        Schema::create('news_letters', function (Blueprint $table) {
+        if (Schema::hasTable('gallery_events')) return;
+        Schema::create('gallery_events', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('ip_address');
+            $table->string('event_name');
+            $table->string('feature_photo');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateNewsLettersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_letters');
+        Schema::dropIfExists('gallery_events');
     }
 }

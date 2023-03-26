@@ -115,11 +115,19 @@
             </a>
         </li>
         <li>
-            <a href="{{route('admin.gallery.list')}}">
-                <div class="parent-icon"> <i class="bx bx-video-recording"></i>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-repeat"></i>
                 </div>
                 <div class="menu-title">Gallery</div>
             </a>
+            <ul>
+                <li> 
+                    <a href="{{route('admin.gallery.events')}}"><i class="bx bx-right-arrow-alt"></i>Events</a>
+                </li>
+                <li> 
+                    <a href="{{route('admin.gallery.list')}}"><i class="bx bx-right-arrow-alt"></i>Images</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="{{route('admin.testimonial.list')}}">

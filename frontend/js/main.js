@@ -23,7 +23,13 @@
         setTimeout(function () {
             hideSpinner();
         }, 500);
-    })
+    });
+
+    $(document).on('click', '.gallery-img-container', function (event){
+        let img_link = $(this).data('img_link');
+        $("#photo_modal_show_img_link").attr('src', img_link);
+        $("#photo_show_modal").modal('show');
+    });
     
     // Initiate the wowjs
     new WOW().init();
@@ -37,6 +43,8 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
+
+    
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
