@@ -5,7 +5,7 @@
             <div class="col-lg-4 col-md-6 footer-about">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-white">{{$appInfo ? $appInfo->app_name : ''}}</h1>
+                        <img src="{{$appInfo? $appInfo->logo_url : ''}}" alt="" style="width: 40%;">
                     </a>
                     <p class="mt-3 mb-4">Best IT training Institute</p>
                     <form action="">
@@ -32,7 +32,11 @@
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
-                            <p class="mb-0">{{$appInfo ? $appInfo->mobile_number : ''}}</p>
+                            <p class="mb-0">
+                                <a href="tel:{{$appInfo ? $appInfo->mobile_number : ''}}" style="color:inherit">
+                                    {{$appInfo ? $appInfo->mobile_number : ''}}
+                                </a>
+                            </p>
                         </div>
                         <div class="d-flex mt-4">
                             <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
