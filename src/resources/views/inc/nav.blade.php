@@ -37,7 +37,7 @@
                                         <a href="{{route('courses')}}?category_id={{$subCategory->id}}" class="dropdown-item">
                                             <span>{{$subCategory->name}}</span> 
                                         </a>
-                                        @php $printedList[] = $courseCategory->id; @endphp
+                                        @php $printedList[] = $subCategory->id; @endphp
                                     </li>
 
                                     @endif
