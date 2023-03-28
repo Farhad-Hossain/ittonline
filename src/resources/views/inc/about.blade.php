@@ -13,9 +13,11 @@
                         {!! $contentAbout ? $contentAbout->short_description : '' !!}
                         @else
                         {{ mb_substr(strip_tags($contentAbout ? $contentAbout->short_description : ''), 0, 250) }} . . .
-                        @endif
                         <br class="m-0 p-0" />
                         <a class="text-uppercase" href="{{route('about')}}">Read More <i class="bi bi-arrow-right"></i></a>
+                        @endif
+                        
+                        
                     </p>
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
