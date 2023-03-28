@@ -6,10 +6,16 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">{{$contentAbout ? $contentAbout->heading_line : ''}}</h1>
+                        <h2 class="mb-0">{{$contentAbout ? $contentAbout->heading_line : ''}}</h2>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4 mt-0 pt-0">
+                        @if ( route('about')==url()->full() )
                         {!! $contentAbout ? $contentAbout->short_description : '' !!}
+                        @else
+                        {{ mb_substr(strip_tags($contentAbout ? $contentAbout->short_description : ''), 0, 250) }} . . .
+                        @endif
+                        <br class="m-0 p-0" />
+                        <a class="text-uppercase" href="{{route('about')}}">Read More <i class="bi bi-arrow-right"></i></a>
                     </p>
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
@@ -32,9 +38,9 @@
                     </div>
                     <a href="{{route('quote')}}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
                 </div>
-                <div class="col-lg-5" style="max-width: 500px;">
+                <div class="col-lg-5 ml-0" style="max-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($contentAbout ? $contentAbout->right_side_photo : '')}}" style="">
+                        <img class="position-absolute w-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($contentAbout ? $contentAbout->right_side_photo : '')}}">
                     </div>
                 </div>
             </div>

@@ -66,7 +66,8 @@ class FrontendController extends Controller
     public function getQuote (Request $request)
     {
         $content = PageContentQuote::first();
-        return view('pages.quote', ['contentQuote'=>$content]);
+        $stuffs = Stuff::where('is_active', 1)->get();
+        return view('pages.quote', ['contentQuote'=>$content, 'stuffs'=>$stuffs]);
     }
 
     public function contact(Request $request)

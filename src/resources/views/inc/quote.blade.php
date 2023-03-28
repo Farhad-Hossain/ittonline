@@ -1,6 +1,5 @@
 <!-- Quote Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-7">
@@ -29,7 +28,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="alert alert-info d-none" id="quote-msg"></div>
-                <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                <div class="bg-primary rounded h-100 d-flex align-items-top p-5 wow zoomIn" data-wow-delay="0.9s">
                     <form action="{{route('quote_form')}}" method="POST" id="quote-request-form">
                         @csrf
                         <div class="row g-3">
@@ -56,3 +55,4 @@
     </div>
 </div>
 <!-- Quote End -->
+@include('inc.team')

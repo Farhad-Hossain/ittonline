@@ -13,30 +13,30 @@
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">{{$appInfo ? $appInfo->mobile_number : ''}}</h4>
+                            <h6 class="mb-2">Call to ask question</h6>
+                            <h6 class="text-primary mb-0">{{$appInfo ? $appInfo->mobile_number : ''}}</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-envelope-open text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Email to get free quote</h5>
-                            <h4 class="text-primary mb-0">{{$appInfo ? $appInfo->email : ''}}</h4>
+                            <h6 class="mb-2">Email for free quote</h6>
+                            <h6 class="text-primary mb-0">{{$appInfo ? $appInfo->email : ''}}</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-map-marker-alt text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Visit our office</h5>
-                            <h4 class="text-primary mb-0">{{$appInfo ? $appInfo->short_address : ''}}</h4>
+                            <h6 class="mb-2">Visit our office</h6>
+                            <h6 class="text-primary mb-0">{{$appInfo ? $appInfo->short_address : ''}}</h6>
                         </div>
                     </div>
                 </div>

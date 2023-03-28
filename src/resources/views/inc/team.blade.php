@@ -10,7 +10,7 @@
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="{{asset($stuff->photo)}}" alt="">
+                        <img class="img-fluid w-100" src="{{asset($stuff->photo)}}" alt="" style="max-height: 350px;">
                         <div class="team-social">
                             <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->twitter}}"><i class="fab fa-twitter fw-normal"></i></a>
                             <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->facebook}}"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -18,7 +18,7 @@
                             <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->linkedin}}"><i class="fab fa-linkedin-in fw-normal"></i></a>
                         </div>
                     </div>
-                    <div class="text-center py-4">
+                    <div class="text-center py-4" style="border:1px solid lightgrey; border-top: 0px;">
                         <h4 class="text-primary">{{$stuff->full_name}}</h4>
                         <p class="text-uppercase m-0">{{$stuff->designation}}</p>
                     </div>
