@@ -4,8 +4,8 @@
 @endpush
 @section('contents')
     <!-- Facts Start -->
-    <div class="container-fluid facts py-5 pt-lg-0">
-        <div class="container py-5 pt-lg-0">
+    <div class="container-fluid facts pt-4 pt-lg-0">
+        <div class="container mt-4 pt-lg-0">
             <div class="row gx-0">
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
                     <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
