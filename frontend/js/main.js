@@ -77,6 +77,12 @@
         }
     });
 
+    $(".dropdown-toggle").on('mouseleave', function () {
+        if ( !$(this).hasClass('active') ) {
+            $(this).css('color', 'black');
+        }
+    })
+
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({

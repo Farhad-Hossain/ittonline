@@ -54,7 +54,7 @@
 
                 <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
                 <div class="nav-item dropdown">
-                    <a href="" class="nav-link nav-item dropdown-toggle {{route('gallery')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Gallery</a>
+                    <a href="" class="nav-link dropdown-main-item dropdown-toggle {{route('gallery')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Gallery</a>
                     <div class="dropdown-menu m-0">
                         <a href="{{route('gallery')}}" class="dropdown-item">Events</a> 
                     </div>
