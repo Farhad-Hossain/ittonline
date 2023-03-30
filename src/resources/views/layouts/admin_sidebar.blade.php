@@ -6,7 +6,9 @@
         </div>
         --}}
         <div>
-            <h4 class="logo-text">{{$appInfo ? $appInfo->app_name : ''}}</h4>
+            <h4 class="logo-text">
+                <a href="{{route('welcome')}}" class="text-light">{{$appInfo ? $appInfo->app_name : ''}}</a>
+            </h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
