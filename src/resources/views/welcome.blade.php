@@ -60,7 +60,7 @@
                                 <i class="fa fa-cubes text-white"></i>
                             </div>
                             <h4>Best In Training Industry</h4>
-                            <p class="mb-0">{{$whyChooseUs ?  $whyChooseUs->content_best_it_training_industry : ''}}</p>
+                            <p class="mb-0">{{$whyChooseUs ? $whyChooseUs->content_best_it_training_industry : ''}}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset($whyChooseUs ? $whyChooseUs->middle_photo : '')}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset($whyChooseUs ? $whyChooseUs->middle_photo : '')}}">
                     </div>
                 </div>
                 <div class="col-lg-4">

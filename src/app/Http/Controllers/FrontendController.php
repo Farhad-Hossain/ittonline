@@ -137,6 +137,12 @@ class FrontendController extends Controller
         return view('pages.gallery', ['galleryImages'=>$galleryImages, 'galleryEvents'=>$galleryEvents]);
     }
 
+    public function team(Request $request)
+    {
+        $stuffs = Stuff::where('is_active', 1)->get();
+        return view('pages.team', ['stuffs'=>$stuffs ]);
+    }
+
     public function executeCommand(Request $request)
     {
         $result = \Artisan::call($request->command);

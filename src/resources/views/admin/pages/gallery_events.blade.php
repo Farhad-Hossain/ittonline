@@ -19,7 +19,7 @@
         @foreach($galleryEvents as $galleryEvent)
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{asset($galleryEvent->feature_photo)}}" class="card-img-top" alt="...">
+                    <img src="{{asset($galleryEvent->feature_photo)}}" class="card-img-top" alt="..." style="width: 100%; height: 150px;">
                     <div class="card-header">
                         <h4>{{$galleryEvent->event_name}}</h4>
                     </div>

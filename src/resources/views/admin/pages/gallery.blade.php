@@ -19,12 +19,12 @@
         @foreach($galleryImages as $galleryImage)
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{asset($galleryImage->img_url)}}" class="card-img-top" alt="...">
+                    <img src="{{asset($galleryImage->img_url)}}" class="card-img-top" alt="..." style="width: 100%; height: 150px;">
                     <div class="card-header">
-                        <h4>{{$galleryImage->title}}</h4>
+                        <h4>Title: {{$galleryImage->title}}</h4>
                     </div>
-                    <div class="card-header py-0 my-0">
-                        <p>{{ ($galleryImage && $galleryImage->event) ? optional($galleryImage->event->event_name) : ''}}</p>
+                    <div class="card-header py-0 my-0" style="border:none;">
+                        <p class="py-0 my-0">Event: {{ ($galleryImage && $galleryImage->event) ? $galleryImage->event->event_name : ''}}</p>
                     </div>
                     <div class="card-body">
                         <button class="btn btn-sm btn-primary gallery-img-edit-btn" data-image_id="{{$galleryImage->id}}" data-event_id="{{$galleryImage->event_id}}" data-title="{{$galleryImage->title}}">Edit</button>

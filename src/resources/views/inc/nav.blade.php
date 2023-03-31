@@ -40,9 +40,7 @@
                                     </a>
                                     @php $printedList[] = $subCategory->id; @endphp
                                 </li>
-
                                 @endif
-
                                 @endforeach
                             </ul>
                             @endif 
@@ -51,7 +49,7 @@
                         @endforeach
                     </ul>
                 </li>
-
+                <a href="{{route('team')}}" class="nav-item nav-link {{route('team')==url()->full() ? 'active' : '' }}">Our Team</a>
                 <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
                 <div class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-main-item dropdown-toggle {{route('gallery')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Gallery</a>
@@ -80,7 +78,7 @@
                 --}}
                 <a href="{{route('contact')}}" class="nav-item nav-link {{route('contact')==url()->full() ? 'active' : '' }}">Contact</a>
             </div>
-            <a href="{{route('quote')}}" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a>
+            {{-- <a href="{{route('quote')}}" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a> --}}
         </div>
     </div>
 </nav>

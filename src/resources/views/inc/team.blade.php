@@ -12,10 +12,10 @@
                     <div class="team-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="{{asset($stuff->photo)}}" alt="" style="max-height: 350px;">
                         <div class="team-social">
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->twitter}}"><i class="fab fa-twitter fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->facebook}}"><i class="fab fa-facebook-f fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->instagram}}"><i class="fab fa-instagram fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{$stuff->linkedin}}"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            <a class="btn btn-primary  rounded" target="_blank" href="{{$stuff->twitter}}"><i class="fab fa-twitter fw-normal"></i></a>
+                            <a class="btn btn-primary  rounded" target="_blank" href="{{$stuff->facebook}}"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-primary  rounded" target="_blank" href="{{$stuff->instagram}}"><i class="fab fa-instagram fw-normal"></i></a>
+                            <a class="btn btn-primary  rounded" target="_blank" href="{{$stuff->linkedin}}"><i class="fab fa-linkedin-in fw-normal"></i></a>
                         </div>
                     </div>
                     <div class="text-center py-4" style="border:1px solid lightgrey; border-top: 0px;">
