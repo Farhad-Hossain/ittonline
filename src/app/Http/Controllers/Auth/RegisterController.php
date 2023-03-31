@@ -64,6 +64,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if ( User::all()->count() > 0 ) {
+            dd('You dont have access');
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

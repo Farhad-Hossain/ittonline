@@ -160,12 +160,11 @@
 							<img src="{{asset('assets/images/avatars/user_avatar.png')}}" class="user-img" alt="user avatar">
 							<div class="user-info ps-3">
 								<p class="user-name mb-0">{{Auth::user()->name}}</p>
-								{{-- <p class="designattion mb-0">Web Developer</p> --}}
 							</div>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end">
 							<li>
-								<a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+								<a class="dropdown-item" href="{{route('admin.profile')}}"><i class="bx bx-user"></i><span>Profile</span></a>
 							</li>
 							<li>
 								<div class="dropdown-divider mb-0"></div>

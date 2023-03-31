@@ -28,6 +28,9 @@ Route::get('/artisan-command-9090', 'FrontendController@executeCommand')->name('
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middleware'=>'auth'], function() {
     Route::get('', 'GeneralController@dashboard')->name('dashboard');
+    Route::match(['GET','POST'], 'profile-setting', 'GeneralController@profile')->name('profile');
+    Route::match(['POST'], 'change-password', 'GeneralController@changePassword')->name('change_password');
+
     Route::match(['GET', 'POST'], 'app-setup', 'AppSetupController@appSettings')->name('app_setup');
     Route::match(['GET', 'POST'], 'slider-setup', 'AppSetupController@sliderSetup')->name('slider_setup');
     Route::match(['POST'], 'slider-edit-add', 'AppSetupController@sliderAddEdit')->name('slider_add_edit');
