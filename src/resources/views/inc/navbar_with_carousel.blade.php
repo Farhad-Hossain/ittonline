@@ -6,7 +6,7 @@
             @if ($sliders)
             @foreach($sliders as $slider)
             <div class="carousel-item {{$loop->index==0 ? 'active' : ''}}">
-                <img class="w-100" src="{{asset($slider->image_url)}}" style="max-height: 480px;" alt="Image">
+                <img class="w-100" src="{{asset($slider->image_url)}}" style="max-height: 480px; border-radius: 2px;" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     
                     <div class="p-3" style="max-width: 100%;">
