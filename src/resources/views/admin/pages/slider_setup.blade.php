@@ -41,7 +41,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Slider Image</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Slider Image</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
@@ -51,15 +51,15 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label for="" class="form-label">Select Image (jpg, jpeg, png, webp, bmp)</label>
+                            <label for="" class="form-label">Select Image (jpg,jpeg,png,webp,bmp and prefferd ratio : <b>10:4</b> ) </label>
                             <input type="file" class="form-control" name="slider_image">
                         </div>
                         <div class="col-sm-12 form-group">
-                            <label for="" class="form-label">Secondary Title</label>
+                            <label for="" class="form-label">Secondary Title <small class="text-danger">(Optional)</small> </label>
                             <input type="text" class="form-control" name="secondary_title" id="form-slider-secondary-title">
                         </div>
                         <div class="col-sm-12 form-group">
-                            <label for="" class="form-label">Primary Title</label>
+                            <label for="" class="form-label">Primary Title <small class="text-danger">(Optional)</small></label>
                             <input type="text" class="form-control" name="primary_title" id="form-slider-primary-title">
                         </div>
                     </div>                    
