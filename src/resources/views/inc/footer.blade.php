@@ -28,7 +28,9 @@
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-envelope-open text-primary me-2"></i>
-                            <p class="mb-0">{{$appInfo ? $appInfo->email : ''}}</p>
+                            <p class="mb-0">
+                                <a href="mailto:{{$appInfo ? $appInfo->email : ''}}" style="color:inherit">{{$appInfo ? $appInfo->email : ''}}</a>
+                            </p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
