@@ -14,7 +14,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Service</th>
-                        <th>Message</th>
+                        <th>Message</th>    
                         <th>Time</th>
                     </tr>
                 </thead>
@@ -24,7 +24,9 @@
                         <td>{{$contact->name ?? ''}}</td>
                         <td>{{$contact->email ?? ''}}</td>
                         <td>{{$contact->subject}}</td>
-                        <td>{{$contact->message}}</td>
+                        <td title="{{$contact->message}}">
+                            <button data-message="{{$contact->message}}" class="btn btn-sm btn-info td-content-details-btn">See Message</button>
+                        </td>
                         <td>{{$contact->created_at->format('Y-m-d, H:i:s')}}</td>
                     </tr>
                     @endforeach

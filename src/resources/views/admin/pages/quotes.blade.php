@@ -2,13 +2,21 @@
 
 @push('custom_styles')
 <link href="{{asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+<style>
+    table.dataTable tbody td {
+  word-break: break-word;
+  vertical-align: top;
+}
+</style>
+
+
 @endpush
 
 @section('contents')
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <table id="example" class="table table-striped table-bordered dataTable" style="table-layout: fixed;">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -24,7 +32,9 @@
                         <td>{{$quote->name ?? ''}}</td>
                         <td>{{$quote->email ?? ''}}</td>
                         <td>{{$quote->service_name}}</td>
-                        <td>{{$quote->message}}</td>
+                        <td title="{{$quote->message}}">
+                            <button data-message="{{$quote->message}}" class="btn btn-sm btn-info td-content-details-btn">See Message</button>
+                        </td>
                         <td>{{$quote->created_at->format('Y-m-d, H:i:s')}}</td>
                     </tr>
                     @endforeach
@@ -41,6 +51,8 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
-        } );
+
+        
+    } );
 </script>
 @endpush

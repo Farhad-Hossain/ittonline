@@ -30,7 +30,9 @@
                         <td>
                             <img src="{{asset($testimonial->photo)}}" alt="" style="width:40px; height: 40px;"> 
                         </td>
-                        <td style="text-wrap: wrap;">{{$testimonial->speech ?? ''}}</td>
+                        <td title="{{$testimonial->speech}}">
+                            <button data-message="{{$testimonial->speech}}" class="btn btn-sm btn-info td-content-details-btn">See Message</button>
+                        </td>
                         <td>
                             <button class="btn btn-sm btn-primary edit-btn" 
                                 data-id="{{$testimonial->id}}"

@@ -217,6 +217,20 @@
 		</footer>
 	</div>
 	<!--end wrapper-->
+
+	<!-- Commomn Modal -->
+	<div class="modal fade" id="commonModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-body" id="commomModalInfoContent">
+			
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		</div>
+	</div>
+	</div>
 	
 	<!-- Bootstrap JS -->
 	<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
@@ -227,6 +241,17 @@
 	{{-- <script src="{{asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script> --}}
 	<!--app JS-->
 	<script src="{{asset('assets/js/app.js')}}"></script>
+
+	<script>
+		function showMessage(message) {
+			$("#commomModalInfoContent").text(message);
+			$("#commonModal").modal('show');
+		}
+		$(".td-content-details-btn").click(function () {
+            let message = $(this).data('message')
+			showMessage(message);
+        });
+	</script>
 
 	@stack('custom_scripts')
 </body>
