@@ -55,4 +55,3 @@
     </div>
 </div>
 <!-- Quote End -->
-@include('inc.team')
