@@ -4,8 +4,8 @@
         <div class="row gx-5">
             <div class="col-lg-4 col-md-6 footer-about">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                    <a href="index.html" class="navbar-brand">
-                        <img src="{{$appInfo? $appInfo->logo_url : ''}}" alt="" style="width: 40%;">
+                    <a href="{{route('welcome')}}" class="navbar-brand">
+                        <img src="{{$appInfo? $appInfo->logo_url : ''}}" alt="" style="max-height: 70px;">
                     </a>
                     <p class="mt-3 mb-4">Best IT training Institute</p>
                     <form action="">
@@ -78,8 +78,6 @@
             <div class="col-lg-8 col-md-6">
                 <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
                     <p class="mb-0">&copy; {{date('Y')}}. <a class="text-white border-bottom" href="{{route('welcome')}}" target="_blank">{{$appInfo ? $appInfo->app_name : ''}}</a>. All Rights Reserved. 
-                    
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed by <a class="text-white border-bottom" target="_blank" href="https://yoursolutionbd.com">Your Solution BD</a></p>
                 </div>
             </div>

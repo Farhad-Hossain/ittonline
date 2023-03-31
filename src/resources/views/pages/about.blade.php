@@ -2,4 +2,5 @@
 @section('contents')
     @include('inc.about')
     @include('inc.team')
+    @include('inc.testimonials')
 @endsection

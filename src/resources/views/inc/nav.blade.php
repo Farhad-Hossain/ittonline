@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
     <div class="container">
         <a href="{{route('welcome')}}" class="navbar-brand p-0">
-            <img src="{{asset($appInfo ? $appInfo->logo_url : '')}}" style="width: 80px;" alt="">
+            <img src="{{asset($appInfo ? $appInfo->logo_url : '')}}" style="max-height: 50px;" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>

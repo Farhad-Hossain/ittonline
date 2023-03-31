@@ -43,7 +43,8 @@ class FrontendController extends Controller
     {
         $content = PageContentAboutUs::first();
         $stuffs = Stuff::where('is_active', 1)->get();
-        return view('pages.about', ['contentAbout'=>$content, 'stuffs'=>$stuffs]);
+        $testimonials = Testimonial::all();
+        return view('pages.about', ['contentAbout'=>$content, 'stuffs'=>$stuffs, 'testimonials'=>$testimonials]);
     }
 
     public function courses (Request $request)
