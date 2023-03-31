@@ -11,13 +11,14 @@
 
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="blog-item bg-light rounded overflow-hidden">
-                    
+                    {{--
                     <div class="blog-img position-relative overflow-hidden">
                         <img class="img-fluid" src="{{asset($course->thumbnail)}}" alt="">
                         <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{route('courses')}}?category_id={{$course->category->id}}">
                             {{$course->category->name}}
                         </a>
                     </div>
+                    --}}
                     <div class="p-4">
                         {{--
                         <div class="d-flex mb-3">
