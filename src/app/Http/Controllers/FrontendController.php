@@ -16,6 +16,8 @@ use App\Models\GalleryEvent;
 use App\Models\Testimonial;
 use App\Models\PageContentWhyChooseUs;
 use App\Models\ServiceCategory;
+use Mail;
+use App\Mail\ContactMail;
 
 class FrontendController extends Controller
 {
@@ -83,6 +85,7 @@ class FrontendController extends Controller
             'message'=>'',
         ];
         $quote = new Quote();
+
         try {
             $quote->name = $request->name ?? '';
             $quote->email = $request->email;
@@ -106,6 +109,8 @@ class FrontendController extends Controller
             'status'=>false,
             'message'=>'',
         ];
+        
+
         $contact = new Contact();
         try {
             $contact->name = $request->name ?? '';
@@ -114,6 +119,15 @@ class FrontendController extends Controller
             $contact->message = $request->message ?? '';
             $contact->ip_address = $request->ip();
             $contact->save();
+
+            $mailData = [
+                'title' => '',
+                'body' => 'This is for testing email using smtp.'
+            ];
+            try {
+                Mail::to($contact->email)->send(new ContactMail($mailData));
+            } catch (\Exception $e) {}
+            
 
             $data['status'] = true;
             $data['message'] = 'Thank you, Your request submitted.';
