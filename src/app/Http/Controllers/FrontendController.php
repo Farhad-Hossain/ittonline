@@ -25,7 +25,7 @@ class FrontendController extends Controller
         $contentAbout = PageContentAboutUs::first();
         $contentQuote = PageContentQuote::first();
         $stuffs = Stuff::where('is_active', 1)->get();
-        $courses = Course::all();
+        $courses = Course::orderBy('id', 'desc')->get();
         $testimonials = Testimonial::all();
         $whyChooseUs = PageContentWhyChooseUs::first();
         return view('welcome', [
