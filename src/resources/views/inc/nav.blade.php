@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="{{route('welcome')}}" class="nav-item nav-link {{route('welcome')==url()->full() ? 'active' : '' }}">Home</a>
-                <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About</a>
+                <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About Us</a>
 
                 <li class="nav-item dropdown">
                     <a href="{{route('courses')}}" class="nav-link nav-item dropdown-main-item dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>
@@ -76,8 +76,9 @@
                     </div>
                 </div>
                 --}}
-                <a href="{{route('contact')}}" class="nav-item nav-link {{route('contact')==url()->full() ? 'active' : '' }}">Contact</a>
+                
             </div>
+            <a href="{{route('contact')}}" class="btn btn-primary py-2 px-4 ms-3">Contact Us</a>
             {{-- <a href="{{route('quote')}}" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a> --}}
         </div>
     </div>
