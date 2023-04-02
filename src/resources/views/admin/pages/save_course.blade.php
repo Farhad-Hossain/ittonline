@@ -10,6 +10,7 @@
                 <div class="page-breadcrumb d-sm-flex align-items-center mb-3">
                     <h5 class="card-title">{{$title}}</h5>
                     <div class="ms-auto">
+                        <button class="btn btn-sm btn-primary pull-right" id="add-category-btn">Add category</button>
                         <div class="btn-group">
                             <a href="{{route('admin.course.all')}}" class="btn btn-sm btn-primary pull-right">All Courses</a>
                         </div>
@@ -30,14 +31,14 @@
                             <input type="file" name="thumbnail" class="form-control" value="{{$course ? $course->thumbnail : ''}}">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="" class="form-label">Category</label>
-                            <select name="category_id" id="" class="form-control" required>
-                            <option value="">-- Select Category --</option>
+                            <label for="" class="form-label">Category <span class="text-danger">(Optional)</span></label>
+                            <select name="category_id" id="" class="form-control">
+                            <option value="0">-- Select Category --</option>
                                 @foreach($categories as $category)
                                     @php 
                                         $isSelected = $course && $course->category_id==$category->id ? 'selected' : '';
                                     @endphp
-                                    <option value="{{$category->id}}" {{ $isSelected }}>{{$category->name}}</option>
+                                    <option value="{{$category->id}}" {{ $isSelected }}>{{$category->course_title}}</option>
                                 @endforeach
                             </select>
                         </div>

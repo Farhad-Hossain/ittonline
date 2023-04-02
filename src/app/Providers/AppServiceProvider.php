@@ -7,6 +7,7 @@ use \Illuminate\Support\Facades\View;
 use App\Models\AppBasicInfo;
 use App\Models\ServiceCategory;
 use App\Models\Testimonial;
+use App\Models\Course;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
@@ -33,11 +34,13 @@ class AppServiceProvider extends ServiceProvider
 
         $currentUrl = url()->full();
         $courseCategories = Schema::hasTable( (new ServiceCategory())->getTable() ) ? ServiceCategory::all() : null;
+        $courses = Course::where('is_active', 1)->get();
         View::share([
             'currentUrl'=>$currentUrl,
             'title'=>$appInfo ? $appInfo->app_name : '',
             'nav_title'=>'',
             'courseCategories'=>$courseCategories,
+            'courses'=>$courses,
         ]);
     }
 }

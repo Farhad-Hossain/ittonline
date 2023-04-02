@@ -1,11 +1,11 @@
 <!-- Course details Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-7">
                 <div class="section-title position-relative pb-3 mb-5">
                     <h5 class="fw-bold text-primary text-uppercase">Course Details</h5>
-                    <h1 class="mb-0">{{$course ? $course->course_title : ''}}</h1>
+                    {{-- <h1 class="mb-0">{{$course ? $course->course_title : ''}}</h1> --}}
                 </div>
                 <p class="mb-4">
                     {!! $course ? $course->course_details : '' !!}

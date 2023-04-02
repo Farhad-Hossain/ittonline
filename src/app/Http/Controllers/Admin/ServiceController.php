@@ -12,7 +12,7 @@ class ServiceController extends Controller
 {
     public function services(Request $request)
     {
-        $courses = Course::get();
+        $courses = Course::where('category_id', '<=', 1)->get();
         return view('admin.pages.courses', ['courses'=>$courses]);
     }
 
@@ -48,26 +48,31 @@ class ServiceController extends Controller
 
             return redirect()->back()->with('success', 'Course updated successfully.');
         } 
-        $categories = ServiceCategory::all();
+        $categories = Course::where('is_category', 1)->get();
         return view('admin.pages.save_course', ['course'=>$course, 'title'=>$title, 'categories'=>$categories]);
     }
 
     public function serviceCategories(Request $request)
     {
-        $categories = ServiceCategory::with('services')->get();
+        // $categories = ServiceCategory::with('services')->get();
+        $categories = COurse::where('is_category', 1)->get();
         return view('admin.pages.service_categories', ['categories'=>$categories]);
     }
 
     public function addServiceCategory(Request $request)
     {
         $name = $request->name;
-        $serviceCategory = new ServiceCategory();
-        $serviceCategory->name = $name;
-        if ($request->parent_id) {
-            $serviceCategory->parent_id = $request->parent_id;
-        } else {
-            $serviceCategory->parent_id = 0;
-        }
+        // $serviceCategory = new ServiceCategory();
+        $serviceCategory = new Course();
+        $serviceCategory->course_title = $name;
+        $serviceCategory->starting_date = now();
+        $serviceCategory->total_hours = 0;
+        $serviceCategory->thumbnail = 'null';
+        $serviceCategory->category_id = 0;
+        $serviceCategory->is_category = 1;
+        $serviceCategory->is_active = $request->is_active;
+        $serviceCategory->created_by = Auth::user()->id;
+        $serviceCategory->ip_address = $request->ip();
         $serviceCategory->save();
 
         session()->flash('success', 'Category addedd successfully.');
@@ -77,12 +82,11 @@ class ServiceController extends Controller
     public function editServiceCategory(Request $request)
     {
         $id = $request->id;
-        $category = ServiceCategory::findOrFail($id);
-        $category->name = $request->name;
-        if ($request->parent_id) {
-            $category->parent_id = $request->parent_id;
-        }
-
+        // $category = ServiceCategory::findOrFail($id);
+        $category = Course::findOrFail($id);
+        $category->course_title = $request->name;
+        $category->is_active = $request->is_active;
+        
         $category->save();
         session()->flash('success', 'Category updated successfully.');
         return redirect()->route('admin.course.categories');

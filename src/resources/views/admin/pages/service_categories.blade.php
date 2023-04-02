@@ -16,20 +16,20 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Parent Category</th>
                         <th>Total Courses</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($categories as $category)
                     <tr>
-                        <td>{{$category->name ?? ''}}</td>
-                        <td>{{$category->parentCategory ? $category->parentCategory->name : '-'}}</td>
-                        <th>{{ $category->services()->count() }}</th>
+                        <td>{{$category->course_title ?? ''}}</td>
+                        <th>{{ $category->courses()->count() }}</th>
+                        <th>{{ $category->is_active ? 'Active' : 'Inactive' }}</th>
                         <td>
-                            <button type="button" class="edit-btn btn btn-primary btn-sm" data-id="{{$category->id}}" data-name="{{$category->name}}" 
-                            data-parent_id="{{$category->parentCategory ? $category->parentCategory->id : 0}}">
+                            <button type="button" class="edit-btn btn btn-primary btn-sm" data-id="{{$category->id}}" data-name="{{$category->course_title}}" 
+                            data-is_active="{{$category->is_active}}">
                                 Edit
                             </button>
                         </td>
@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<!-- Category Add / Edit modal -->
+<!-- Category Add modal -->
 <div class="modal fade" id="category-add-modal" tabindex="-1" role="dialog" aria-labelledby="categoryAddModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-lg" role="document">
     <div class="modal-content">
@@ -57,17 +57,15 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-12 form-group">
-                <label for="" class="form-label" title="For main Category, Dont change value">Sub Category of <span class="text-danger">(Optional)</span></label>
-                <select name="parent_id" id="form-sub-category" class="form-control">
-                  <option value="0">--Select a category--</option>
-                  @foreach($categories as $category)
-                  <option value="{{$category->id}}">{{$category->name}}</option>
-                  @endforeach
-                </select>
+                <label for="" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" class="form-control form-control-sm" id="fi-name" required>
             </div>
             <div class="col-md-12 form-group">
-                <label for="" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" name="name" class="form-control" id="fi-name" required>
+                <label for="" class="form-label">Active Status <span class="text-danger">*</span></label>
+                <select name="is_active" id="" class="form-control form-control-sm">
+                  <option value="1" selected>Active</option>
+                  <option value="0">InActive</option>
+                </select>
             </div>
         </div>
       </div>
@@ -95,18 +93,16 @@
       <input type="hidden" name="id" class="form-control" id="fi-edit-id" value="0" required>
       <div class="modal-body">
         <div class="row">
-            <div class="col-md-12 form-group d-none">
-                <label for="" class="form-label" title="For main Category, Dont change value">Sub Category of <span class="text-danger">(Optional)</span></label>
-                <select name="parent_id" id="fi-edit-parent-category" class="form-control">
-                  <option value="" selected>--Select a category--</option>
-                  @foreach($categories as $category)
-                  <option value="{{$category->id}}">{{$category->name}}</option>
-                  @endforeach
-                </select>
-            </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
                 <input type="text" name="name" class="form-control" id="fi-edit-name" required>
+            </div>
+            <div class="col-md-12 form-group">
+                <label for="" class="form-label">Active Status <span class="text-danger">*</span></label>
+                <select name="is_active" class="form-control form-control-sm" id="fi-edit-is_active">
+                  <option value="1">Active</option>
+                  <option value="0">InActive</option>
+                </select>
             </div>
         </div>
       </div>
@@ -130,8 +126,7 @@
         $(document).on('click', '.edit-btn', function (){
             $("#fi-edit-id").val($(this).data('id'));
             $("#fi-edit-name").val($(this).data('name'));
-            $("#fi-edit-parent-category").val($(this).data('parent_id')).change();
-
+            $("#fi-edit-is_Active").val($(this).data('is_active')).change();
             $("#category-edit-modal").modal('show');
         });
     } );
