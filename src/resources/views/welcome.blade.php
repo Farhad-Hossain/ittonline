@@ -4,6 +4,7 @@
 @endpush
 @section('contents')
     <!-- Facts Start -->
+    {{--
     <div class="container-fluid facts pt-4 pt-lg-0">
         <div class="container mt-4 pt-lg-0">
             <div class="row gx-0">
@@ -43,6 +44,7 @@
             </div>
         </div>
     </div>
+    --}}
     <!-- Facts Start -->
     @include('inc.about')
     <!-- Features Start -->
