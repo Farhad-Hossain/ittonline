@@ -19,7 +19,7 @@
                             @if($course->is_category)
                             <li>
                                 <a href="#" class="dropdown-item">
-                                    <span>{{$course->course_title}}</span><span style="position:absolute; right: 7px;">&raquo;</span>
+                                    <span>{{$course->course_title}}</span>&nbsp; &nbsp;<span style="position:absolute; right: 7px;">&raquo;</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-submenu">
                                     @foreach($course->courses as $subCourse)
