@@ -33,13 +33,11 @@ class AppServiceProvider extends ServiceProvider
         View::share('appInfo', $appInfo);
 
         $currentUrl = url()->full();
-        $courseCategories = Schema::hasTable( (new ServiceCategory())->getTable() ) ? ServiceCategory::all() : null;
         $courses = Course::where('is_active', 1)->get();
         View::share([
             'currentUrl'=>$currentUrl,
             'title'=>$appInfo ? $appInfo->app_name : '',
             'nav_title'=>'',
-            'courseCategories'=>$courseCategories,
             'courses'=>$courses,
         ]);
     }
