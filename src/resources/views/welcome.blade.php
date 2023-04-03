@@ -175,8 +175,9 @@
 
 
     @include('inc.quote')
-    @include('inc.testimonials')
     @include('inc.team')
+    @include('inc.testimonials')
+    
     
     <!-- Vendor Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">

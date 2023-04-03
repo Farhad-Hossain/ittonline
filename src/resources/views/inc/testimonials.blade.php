@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
             <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>
-            <h1 class="mb-0">What Our Clients Say About Our Digital Services</h1>
+            <h1 class="mb-0">What Our Clients Saying</h1>
         </div>
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
             @foreach($testimonials as $testimonial)
