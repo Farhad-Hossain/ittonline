@@ -12,7 +12,7 @@ class ServiceController extends Controller
 {
     public function services(Request $request)
     {
-        $courses = Course::where('category_id', '<=', 1)->get();
+        $courses = Course::where('is_category', '!=', 1)->get();
         return view('admin.pages.courses', ['courses'=>$courses]);
     }
 
