@@ -32,6 +32,7 @@ class AppSetupController extends Controller
             $basicInfo->number_of_happy_students = $req->number_of_happy_students ?? 0;
             $basicInfo->number_of_done_projects = $req->number_of_done_projects ?? 0;
             $basicInfo->number_of_awards = $req->number_of_awards ?? 0;
+            $basicInfo->opening_hours_text = $req->opening_hours_text ?? '';
 
             if ($req->logo) {
                 $logoFileName = time().'.'.$req->logo->extension();

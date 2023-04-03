@@ -26,6 +26,7 @@ class CreateAppBasicInfosTable extends Migration
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
             $table->string('linkedin')->nullable();
+            $table->string('opening_hours_text')->nullable();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->string('created_ip');

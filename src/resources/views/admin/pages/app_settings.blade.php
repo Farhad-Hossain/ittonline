@@ -14,39 +14,44 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Application Name</label>
-                            <input type="text" class="form-control" name='app_name' value="{{$basicInfo ? $basicInfo['app_name'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name='app_name' value="{{$basicInfo ? $basicInfo['app_name'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Mobile number</label>
-                            <input type="text" class="form-control" name='mobile_no' value="{{$basicInfo ? $basicInfo['mobile_number'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name='mobile_no' value="{{$basicInfo ? $basicInfo['mobile_number'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Email</label>
-                            <input type="text" class="form-control" name='email' value="{{$basicInfo ? $basicInfo['email'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name='email' value="{{$basicInfo ? $basicInfo['email'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Logo (3x2 image ratio preferrable)</label>
-                            <input type="file" class="form-control" name='logo'>
+                            <input type="file" class="form-control form-control-sm" name='logo'>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="" class="form-label">Short Address</label>
-                            <input type="text" class="form-control" name='short_address' value="{{$basicInfo ? $basicInfo->short_address : ''}}">
+                            <input type="text" class="form-control form-control-sm" name='short_address' value="{{$basicInfo ? $basicInfo->short_address : ''}}">
                         </div>
                     </div>
-                    <hr />
                     <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="" class="form-label">Opening Hours Text</label>
+                            <input type="text" class="form-control form-control-sm" name="opening_hours_text" value="{{$basicInfo ? $basicInfo['opening_hours_text'] : ''}}">
+                        </div>
+                        {{--
                         <div class="form-group col-md-4">
                             <label for="" class="form-label">Number of Students </label>
-                            <input type="number" class="form-control" name="number_of_happy_students" value="{{$basicInfo ? $basicInfo['number_of_happy_students'] : ''}}">
+                            <input type="number" class="form-control form-control-sm" name="number_of_happy_students" value="{{$basicInfo ? $basicInfo['number_of_happy_students'] : ''}}">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="" class="form-label">Number of Courses Done  </label>
-                            <input type="number" class="form-control" name="number_of_done_projects" value="{{$basicInfo ? $basicInfo['number_of_done_projects'] : ''}}">
+                            <input type="number" class="form-control form-control-sm" name="number_of_done_projects" value="{{$basicInfo ? $basicInfo['number_of_done_projects'] : ''}}">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="" class="form-label">Number of Awards  </label>
-                            <input type="number" class="form-control" name="number_of_awards" value="{{$basicInfo ? $basicInfo['number_of_awards'] : ''}}">
+                            <input type="number" class="form-control form-control-sm" name="number_of_awards" value="{{$basicInfo ? $basicInfo['number_of_awards'] : ''}}">
                         </div>
+                        --}}
                     </div>
                     <div>
                         <h5 class="card-title mt-4">Social Links</h5>
@@ -55,15 +60,15 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Facebook <small class="text-danger">*( Full url )</small></label>
-                            <input type="text" class="form-control" name="facebook" value="{{$basicInfo ? $basicInfo['facebook'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name="facebook" value="{{$basicInfo ? $basicInfo['facebook'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Twitter <small class="text-danger">*( Full url )</small></label>
-                            <input type="text" class="form-control" name="twitter" value="{{$basicInfo ? $basicInfo['twitter'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name="twitter" value="{{$basicInfo ? $basicInfo['twitter'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Instagram <small class="text-danger">*( Full url )</small></label>
-                            <input type="text" class="form-control" name="instagram" value="{{$basicInfo ? $basicInfo['instagram'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name="instagram" value="{{$basicInfo ? $basicInfo['instagram'] : ''}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="" class="form-label">Linkedin <small class="text-danger">*( Full url )</small></label>
@@ -71,7 +76,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label for="" class="form-label">Youtube <small class="text-danger">*( Full url )</small></label>
-                            <input type="text" class="form-control" name="youtube" value="{{$basicInfo ? $basicInfo['youtube'] : ''}}">
+                            <input type="text" class="form-control form-control-sm" name="youtube" value="{{$basicInfo ? $basicInfo['youtube'] : ''}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="" class="form-label">Paste here Google Map location (Embedded Link)  
@@ -86,7 +91,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="form-group col-md-12">
-                            <button type="submit" class="btn btn-primary" style="min-width: 100px;">Save</button>
+                            <button type="submit" class="btn btn-sm btn-primary" style="min-width: 100px;">Save</button>
                         </div>
                     </div>
                 </form>
