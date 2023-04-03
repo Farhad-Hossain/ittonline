@@ -3,7 +3,7 @@
 @section('contents')
     <!--breadcrumb-->
     <div class="page-breadcrumb d-sm-flex align-items-center mb-3">
-        <div class="h4" style="color: rgb(80, 80, 80)">Gallery Images</div>
+        <div class="h4" style="color: rgb(80, 80, 80)">Gallery Events</div>
         <div class="ms-auto">
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary" id="gallery-event-add-btn" data-event_id="0" data-bs-toggle="modal" data-title="">
@@ -33,7 +33,7 @@
         @endif
     </div>
 
-    <!-- Modal for adding / Editing slider -->
+    <!-- Modal for adding / Editing Gallery event -->
     <div class="modal fade" id="gallery-event-add-edit-modal" tabindex="-1" aria-labelledby="addEditModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -49,18 +49,18 @@
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label for="" class="form-label">Select Image (jpg, jpeg, png, webp, bmp)</label>
-                            <input type="file" class="form-control" name="feature_photo">
+                            <input type="file" class="form-control form-control-sm" name="feature_photo">
                         </div>
                         
                         <div class="col-sm-12 form-group">
                             <label for="" class="form-label">Event name</label>
-                            <input type="text" class="form-control" name="event_name" id="form-event-title">
+                            <input type="text" class="form-control form-control-sm" name="event_name" id="form-event-title">
                         </div>
                     </div>                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Save</button>
                 </div>
             </form>
 
@@ -68,7 +68,7 @@
     </div>
     </div>
 
-    <!-- Slider delete form -->
+    <!-- Gallery Event delete form -->
     <form action="{{route('admin.gallery.delete_event')}}" method="POST" id="gallery-event-delete-form">
         @csrf
         <input type="hidden" name="event_id" id="form-gallery-event-delete-id">

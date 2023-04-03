@@ -17,13 +17,11 @@
     <div class="row">
         @if($galleryImages)
         @foreach($galleryImages as $galleryImage)
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card">
-                    <img src="{{asset($galleryImage->img_url)}}" class="card-img-top" alt="..." style="width: 100%; height: 150px;">
-                    <div class="card-header">
-                        <h4>Title: {{$galleryImage->title}}</h4>
-                    </div>
-                    <div class="card-header py-0 my-0" style="border:none;">
+                    <img src="{{asset($galleryImage->img_url)}}" class="card-img-top" alt="..." style="width: 100%; height: 160px;">
+                    <div class="card-body mb-0 pb-0">
+                        <h6>Title: {{$galleryImage->title}}</h6>
                         <p class="py-0 my-0">Event: {{ ($galleryImage && $galleryImage->event) ? $galleryImage->event->event_name : ''}}</p>
                     </div>
                     <div class="card-body">
@@ -52,12 +50,12 @@
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label for="" class="form-label">Select Image (jpg, jpeg, png, webp, bmp)</label>
-                            <input type="file" class="form-control" name="gallery_image">
+                            <input type="file" class="form-control form-control-sm" name="gallery_image">
                         </div>
 
                         <div class="col-sm 12 form-group">
                             <label for="" class="form-label">Select Event</label>
-                            <select name="event_id" class="form-control" id="form-event-id" required>
+                            <select name="event_id" class="form-control form-control-sm" id="form-event-id" required>
                                 <option value="">--Select Event--</option>
                                 @foreach($galleryEvents as $galleryEvent)
                                 <option value="{{$galleryEvent->id}}">{{$galleryEvent->event_name}}</option>
@@ -67,13 +65,13 @@
                         
                         <div class="col-sm-12 form-group">
                             <label for="" class="form-label">Image Title</label>
-                            <input type="text" class="form-control" name="title" id="form-image-title">
+                            <input type="text" class="form-control form-control-sm" name="title" id="form-image-title">
                         </div>
                     </div>                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Save</button>
                 </div>
             </form>
 

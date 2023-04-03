@@ -69,25 +69,25 @@
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" name="name" class="form-control" id="fi-name" required>
+                <input type="text" name="name" class="form-control form-control-sm" id="fi-name" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Profession <span class="text-danger">*</span></label>
-                <input type="text" name="profession" id="fi-profession" class="form-control" required>
+                <input type="text" name="profession" id="fi-profession" class="form-control form-control-sm" required>
             </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Photo <span class="text-danger" id="photo-help-text">*</span></label>
-                <input type="file" name="photo" id="fi-photo" class="form-control" required>
+                <input type="file" name="photo" id="fi-photo" class="form-control form-control-sm" required>
             </div>
             <div class="col-md-12 form-group">
-                <label for="" class="form-label">Speech</label>
-                <textarea class="form-control" name="speech" id="fi-speech"></textarea>
+                <label for="" class="form-label">Speech <small class="text-danger">(Max 200 Character)</small></label>
+                <textarea class="form-control form-control-sm" name="speech" id="fi-speech" rows="5"></textarea>
             </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-sm btn-primary">Save</button>
       </div>
       </form>
     </div>
@@ -112,25 +112,25 @@
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" name="name" class="form-control" id="fi-edit-name" required>
+                <input type="text" name="name" class="form-control form-control-sm" id="fi-edit-name" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Profession <span class="text-danger">*</span></label>
-                <input type="text" name="profession" id="fi-edit-profession" class="form-control" required>
+                <input type="text" name="profession" id="fi-edit-profession" class="form-control form-control-sm" required>
             </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Photo <span class="text-danger" id="photo-help-text">*</span></label>
-                <input type="file" name="photo" id="fi-edit-photo" class="form-control">
+                <input type="file" name="photo" id="fi-edit-photo" class="form-control form-control-sm">
             </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Speech</label>
-                <textarea class="form-control" name="speech" id="fi-edit-speech"></textarea>
+                <textarea class="form-control" name="speech" id="fi-edit-speech" rows="5"></textarea>
             </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-sm btn-primary">Save</button>
       </div>
       </form>
     </div>

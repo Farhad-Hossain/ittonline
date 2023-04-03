@@ -72,50 +72,50 @@
       </div>
       <form action="{{route('admin.stuff.add')}}" method="POST" enctype="multipart/form-data">
       @csrf
-      <input type="hidden" name="id" class="form-control" id="fi-id" value="0" required>
+      <input type="hidden" name="id" class="form-control form-control-sm" id="fi-id" value="0" required>
       <div class="modal-body">
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" name="name" class="form-control" id="fi-name" required>
+                <input type="text" name="name" class="form-control form-control-sm" id="fi-name" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Designation <span class="text-danger">*</span></label>
-                <input type="text" name="designation" id="fi-designation" class="form-control" required>
+                <input type="text" name="designation" id="fi-designation" class="form-control form-control-sm" required>
             </div>
             <div class="col-md-12 form-group">
                 <label for="" class="form-label">Photo <span class="text-danger" id="photo-help-text">*</span></label>
-                <input type="file" name="photo" id="fi-photo" class="form-control" required>
+                <input type="file" name="photo" id="fi-photo" class="form-control form-control-sm" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Mobile No.</label>
-                <input type="text" name="mobile_no" id="fi-mobile_no" class="form-control">
+                <input type="text" name="mobile_no" id="fi-mobile_no" class="form-control form-control-sm">
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Email</label>
-                <input type="email" name="email" id="fi-email" class="form-control" >
+                <input type="email" name="email" id="fi-email" class="form-control form-control-sm">
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Twitter <small>(Full url)</small></label>
-                <input type="text" name="twitter" id="fi-twitter" class="form-control" >
+                <input type="text" name="twitter" id="fi-twitter" class="form-control form-control-sm">
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Facebook <small>(Full url)</small></label>
-                <input type="text" name="facebook" id="fi-facebook" class="form-control" >
+                <input type="text" name="facebook" id="fi-facebook" class="form-control form-control-sm">
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Instagram <small>(Full url)</small></label>
-                <input type="text" name="instagram" id="fi-instagram" class="form-control" >
+                <input type="text" name="instagram" id="fi-instagram" class="form-control form-control-sm">
             </div>
             <div class="col-md-6 form-group">
                 <label for="" class="form-label">Linkedin <small>(Full url)</small></label>
-                <input type="text" name="linkedin" id="fi-linkedin" class="form-control" >
+                <input type="text" name="linkedin" id="fi-linkedin" class="form-control form-control-sm">
             </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-sm btn-primary">Save changes</button>
       </div>
       </form>
     </div>
