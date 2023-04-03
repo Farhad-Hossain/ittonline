@@ -178,7 +178,7 @@
     @include('inc.team')
     @include('inc.testimonials')
     
-    
+    {{--
     <!-- Vendor Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
@@ -198,4 +198,5 @@
         </div>
     </div>
     <!-- Vendor End -->
+    --}}
 @endsection
