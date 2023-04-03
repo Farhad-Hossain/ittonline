@@ -63,7 +63,8 @@ class FrontendController extends Controller
     {
         $course = Course::findOrFail($course_id);
         $stuffs = Stuff::where('is_active', 1)->get();
-        return view('pages.course_details', ['course'=>$course, 'stuffs'=>$stuffs]);
+        $contentQuote = PageContentQuote::first();
+        return view('pages.course_details', ['course'=>$course, 'stuffs'=>$stuffs, 'contentQuote'=>$contentQuote]);
     }
 
     public function getQuote (Request $request)
