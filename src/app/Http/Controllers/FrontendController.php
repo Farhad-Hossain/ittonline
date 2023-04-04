@@ -24,7 +24,7 @@ class FrontendController extends Controller
     public function welcome(Request $req)
     {
         $sliders = SliderImage::all();
-        $contentAbout = PageContentAboutUs::first();
+        $contentAbout = PageContentAboutUs::where('is_menu', '!=', 1)->first();
         $contentQuote = PageContentQuote::first();
         $stuffs = Stuff::where('is_active', 1)->get();
         // $courses = Course::orderBy('id', 'desc')->get();
