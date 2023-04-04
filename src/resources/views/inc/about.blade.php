@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-lg-5 ml-0" style="max-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($contentAbout ? $contentAbout->right_side_photo : '')}}">
+                        <img class="w-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($contentAbout ? $contentAbout->right_side_photo : '')}}">
                     </div>
                 </div>
             </div>
