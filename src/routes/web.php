@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', 'FrontendController@welcome')->name('welcome');
 Route::get('/about', 'FrontendController@about')->name('about');
+Route::get('/about-us/{menu_slag}', 'FrontendController@aboutUsMenu')->name('about_us_menu');
 Route::get('/courses', 'FrontendController@courses')->name('courses');
 Route::get('/course-details/{id}', 'FrontendController@courseDetails')->name('course_details');
 Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
@@ -43,6 +44,9 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
 
     Route::group(['prefix'=>'page-content', 'as'=>'page_content.'], function () {
         Route::match(["GET","POST"],'about-us', 'PageContentController@aboutUs')->name('about_us');
+        Route::match(["GET"],'about-us-menus', 'PageContentController@aboutUsMenus')->name('about_us_menus');
+        Route::match(["GET", "POST"],'about-us-menu-content-update', 'PageContentController@aboutUsMenuContentUpdate')
+            ->name('about_us_menu_content_update');
         Route::match(["GET","POST"],'free-quote', 'PageContentController@freeQuote')->name('free_quote');
         Route::match(["GET","POST"],'contact', 'PageContentController@contact')->name('contact');
         Route::match(["GET","POST"],'why-choose-us', 'PageContentController@whyChooseUs')->name('why_choose_us');

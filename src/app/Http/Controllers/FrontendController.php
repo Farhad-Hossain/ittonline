@@ -49,6 +49,12 @@ class FrontendController extends Controller
         return view('pages.about', ['contentAbout'=>$content, 'stuffs'=>$stuffs, 'testimonials'=>$testimonials]);
     }
 
+    public function aboutUsMenu(Request $request, $menu_slug)
+    {
+        $aboutUsMenu = PageContentAboutUs::where('menu_slug', $menu_slug)->first();
+        return view('pages.about_us_content', ['aboutUsMenu'=>$aboutUsMenu]);
+    }
+
     public function courses (Request $request)
     {
         if ( $request->category_id ) {

@@ -10,7 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="{{route('welcome')}}" class="nav-item nav-link {{route('welcome')==url()->full() ? 'active' : '' }}">Home</a>
-                <a href="{{route('about')}}" class="nav-item nav-link {{route('about')==url()->full() ? 'active' : '' }}" >About Us</a>
+                <li class="nav-item dropdown">
+                    <a href="{{route('about')}}" class="nav-link nav-item dropdown-toggle {{route('about')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">About Us</a>
+                    <ul class="dropdown-menu m-0">
+                        @if( $about_us_menus != null )
+                        @foreach($about_us_menus as $menu)
+                            <li><a href="{{route('about_us_menu', $menu->menu_slug)}}" class="dropdown-item">{{$menu->menu_name}}</a></li>
+                        @endforeach
+                        @endif
+                    </ul>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a href="{{route('courses')}}" class="nav-link nav-item dropdown-toggle {{route('courses')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Courses</a>

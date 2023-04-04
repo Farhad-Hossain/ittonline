@@ -48,6 +48,9 @@
                     <a href="{{route('admin.page_content.about_us')}}"><i class="bx bx-right-arrow-alt"></i>About Us</a>
                 </li>
                 <li> 
+                    <a href="{{route('admin.page_content.about_us_menus')}}"><i class="bx bx-right-arrow-alt"></i>About Us Menus</a>
+                </li>
+                <li> 
                     <a href="{{route('admin.page_content.free_quote')}}"><i class="bx bx-right-arrow-alt"></i>Free Quote</a>
                 </li>
                 <li> 

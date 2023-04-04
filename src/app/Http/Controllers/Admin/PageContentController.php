@@ -47,6 +47,41 @@ class PageContentController extends Controller
         }
     }
 
+    public function aboutUsMenus(Request $request)
+    {
+        $menus = PageContentAboutUs::where('is_menu', 1)->get();
+        return view('admin.pages.page_content.about_us_menus', ['menus'=>$menus]);
+    }
+
+    public function aboutUsMenuContentUpdate(Request $request)
+    {
+        if ($request->method() == "GET") {
+            $content = null;
+            if ( $request->id ) {
+                $content = PageContentAboutUs::findOrFail($request->id);
+            }
+            return view('admin.pages.page_content.about_us_menu_content', ['content'=>$content]);
+        }
+        if ($request->method() == 'POST') {
+            if ($request->menu_id && $request->menu_id > 0) {
+                $content = PageContentAboutUs::findOrFail($request->menu_id);    
+            } else {
+                $content = new PageContentAboutUs();
+            }
+            $content->menu_name = $request->menu_name ?? '';
+            $content->menu_slug = str_replace(' ', '-', $content->menu_name);
+            $content->is_menu = 1;
+            $content->short_description = $request->short_description ?? '';
+            $content->ip = $request->ip();
+            $content->created_by = !$content->created_by ? Auth::user()->id : $content->created_by;
+            $content->updated_by = Auth::user()->id;
+            $content->save();
+
+            return redirect()->route('admin.page_content.about_us_menus')->with('success', 'About us Menu content saved successfully.');
+        }
+        
+    }
+
     public function freeQuote(Request $request)
     {
         if ($request->method() == 'POST') {
