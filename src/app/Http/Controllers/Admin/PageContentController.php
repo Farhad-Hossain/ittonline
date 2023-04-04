@@ -19,7 +19,7 @@ class PageContentController extends Controller
     public function aboutUs(Request $request)
     {
         if ($request->method() == 'POST') {
-            $content = PageContentAboutUs::first() != null ? PageContentAboutUs::first() : new PageContentAboutUs() ;
+            $content = PageContentAboutUs::where('is_menu', '!=', 1)->first() != null ? PageContentAboutUs::where('is_menu', '!=', 1)->first() : new PageContentAboutUs() ;
             $content->heading_line = $request->heading_line ? $request->heading_line : '';
             
             $content->short_description = $request->short_description ?? '';
@@ -42,7 +42,7 @@ class PageContentController extends Controller
 
             return redirect()->back()->with('success', 'Content updated successfully.');
         } else {
-            $content = PageContentAboutUs::first() or null;
+            $content = PageContentAboutUs::where('is_menu', '!=', 1)->first() or null;
             return view('admin.pages.page_content.about_us', ['content'=>$content]);
         }
     }
