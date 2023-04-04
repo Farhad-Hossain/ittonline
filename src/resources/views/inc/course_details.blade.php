@@ -26,7 +26,7 @@
             <div class="col-lg-5" >
                 <h4>Duration : {{$course->total_hours}} Months</h4>
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($course ? $course->thumbnail : '')}}" style="">
+                    <img class="w-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($course ? $course->thumbnail : '')}}" style="">
                 </div>
             </div>
         </div>
