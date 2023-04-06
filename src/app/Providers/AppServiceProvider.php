@@ -9,6 +9,7 @@ use App\Models\ServiceCategory;
 use App\Models\Testimonial;
 use App\Models\Course;
 use App\Models\PageContentAboutUs;
+use App\Models\ClassScheduleMenu;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
@@ -37,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
         $courseCategories = Schema::hasTable( (new ServiceCategory())->getTable() ) ? ServiceCategory::all() : null;
         $courses = Schema::hasTable( (new Course())->getTable() ) ? Course::where('is_active', 1)->get() : null;
         $about_us_menus = Schema::hasTable( (new PageContentAboutUs())->getTable() ) ? PageContentAboutUs::where('is_menu', 1)->get() : null;
+        $class_schedule_menus = Schema::hasTable( (new ClassScheduleMenu())->getTable() ) ? ClassScheduleMenu::all() : null;
         View::share([
             'currentUrl'=>$currentUrl,
             'title'=>$appInfo ? $appInfo->app_name : '',
@@ -44,6 +46,7 @@ class AppServiceProvider extends ServiceProvider
             'courseCategories'=>$courseCategories,
             'courses'=>$courses,
             'about_us_menus' => $about_us_menus,
+            'class_schedule_menus' => $class_schedule_menus,
         ]);
     }
 }
