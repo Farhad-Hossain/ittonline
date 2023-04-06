@@ -4,49 +4,83 @@
 @endpush
 @section('contents')
     <!-- Facts Start -->
-    {{--
     <div class="container-fluid facts pt-4 pt-lg-0">
         <div class="container mt-4 pt-lg-0">
             <div class="row gx-0">
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-users text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Happy Students</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $appInfo ? $appInfo->number_of_happy_students : '' }}</h1>
-                        </div>
+                <div class="col-sm-12 col-lg-9 wow zoomIn d-flex align-items-stretch flex-lg-column-reverse" data-wow-delay="0.1s" style="padding-right: 25px;">
+                    <div class="bg-primary shadow p-5 text-light" style="border-radius: 11px;">
+                        <h2>{{$appInfo ? $appInfo->app_name : ''}}</h2>
+                        <p style="text-align: justify;">{{ mb_substr(strip_tags($contentAbout ? $contentAbout->short_description : ''), 0, 600) }}</p>
+                        <br class="m-0 p-0" />
+                        <p class="py-2">
+                            <a class="btn btn-light text-dark" href="{{route('about')}}">
+                                Read More
+                            </a>
+                            &nbsp; &nbsp;
+                            <button type="button" class="btn btn-outline-light btn-rounded">
+                                    {{$appInfo ? $appInfo->mobile_number : ''}}
+                            </button>
+                        </p>
+                        <p><h3>Modes of Training</h3></p>
+                        <p style="height: 40px;">
+                            <span style="padding-right: 50px;">
+                            <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/class-room-mode.png" alt="" style="height: 100%;">Classroom
+                            </span>
+
+                            <span style="padding-right: 50px;">
+                            <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/one-to-one.png" alt="" style="height: 100%;">One-To-One
+                            </span>
+
+                            {{--
+                            <span style="padding-right: 50px;">
+                                <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/on-site-mode.png" alt="" style="height: 100%;">Customer Premises
+                            </span>
+                            --}}
+
+                            <span style="padding-right: 50px;">
+                                <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/15.png" alt="" style="height: 100%;">Online / E-Learning
+                            </span>
+                            
+                        </p>
+
                     </div>
                 </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-check text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-primary mb-0">Courses Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">{{ $appInfo ? $appInfo->number_of_done_projects : '' }}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-award text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Win Awards</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $appInfo ? $appInfo->number_of_awards : '' }}</h1>
-                        </div>
+                <div class="col-sm-12 col-lg-3 wow zoomIn d-flex align-items-stretch order-sm-first order-md-last" data-wow-delay="0.3s">
+                    <div class="bg-light shadow p-2 w-100" style="border-radius: 11px;">
+                        <h3 class="pt-3 mt-3 underline"> || Latest Offers</h3>
+                        <marquee onmouseover="this.start();" onmouseout="this.stop();" direction="up" scrolldelay="150" style="max-height: 250px;">
+                            <strong>Free Microsoft Azure With CCNA</strong><br>
+                            -Online / On-Campus<br>
+                            -Schedule 29th Mar 5:00PM<br>
+                            <strong>Free Cisco Firewall with CCNP</strong><br>
+                            -Schedule 3rd Apr  5:00PM<br>
+                            -Instructor : Haroon Malik<br>
+                            <strong>Free Microsoft Azure With CCNA</strong><br>
+                            -Online / On-Campus<br>
+                            -Schedule 29th Mar 5:00PM<br>
+                            <strong>Free Cisco Firewall with CCNP</strong><br>
+                            -Schedule 3rd Apr  5:00PM<br>
+                            -Instructor : Haroon Malik<br>
+                            <strong>Free Microsoft Azure With CCNA</strong><br>
+                            -Online / On-Campus<br>
+                            -Schedule 29th Mar 5:00PM<br>
+                            <strong>Free Cisco Firewall with CCNP</strong><br>
+                            -Schedule 3rd Apr  5:00PM<br>
+                            -Instructor : Haroon Malik<br>
+                            <strong>Free Microsoft Azure With CCNA</strong><br>
+                            -Online / On-Campus<br>
+                            -Schedule 29th Mar 5:00PM<br>
+                            <strong>Free Cisco Firewall with CCNP</strong><br>
+                            -Schedule 3rd Apr  5:00PM<br>
+                            -Instructor : Haroon Malik<br>
+                        </marquee>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    --}}
     <!-- Facts Start -->
-    @include('inc.about')
+    {{-- @include('inc.about') --}}
     <!-- Features Start -->
     <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">

@@ -1,6 +1,6 @@
 <div class="container-fluid position-relative p-0">
     @include('inc.nav')
-    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" style="">
         <div class="container py-3">
         <div class="carousel-inner">
             @if ($sliders)

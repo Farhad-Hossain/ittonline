@@ -4,7 +4,7 @@
         <div class="row g-5">
             <div class="col-lg-7">
                 <div class="section-title position-relative pb-3 mb-5">
-                    <h5 class="fw-bold text-primary text-uppercase">Quick Inquery</h5>
+                    <h5 class="fw-bold text-primary text-uppercase">Get a quote</h5>
                     <h1 class="mb-0">{{$contentQuote ? $contentQuote->heading_line : ''}}</h1>
                 </div>
                 <div class="row gx-3">
