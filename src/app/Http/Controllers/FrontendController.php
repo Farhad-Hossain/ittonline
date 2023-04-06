@@ -113,7 +113,6 @@ class FrontendController extends Controller
         } catch (\Exception $e) {
             $data['message'] = 'Something went wrong. Try later';
         }
-
         return response()->json($data, 200);
     }
 
@@ -151,6 +150,11 @@ class FrontendController extends Controller
         }
 
         return response()->json($data, 200);
+    }
+
+    public function inqueryForm(Request $request)
+    {
+        return view('pages.inquery_form');
     }
 
     public function gallery(Request $request)

@@ -78,6 +78,7 @@
             });
             $(document).on('submit', '#contact-form', function (event) {
                 event.preventDefault();
+                $(".contact-submit-btn").text('Processing...');
                 let target = $(this).attr('action');
                 let formData = $("#contact-form").serialize();
                 $.ajax({
@@ -88,6 +89,7 @@
                     ContentType:false,
                     success: function (data) {
                         $("#contact-msg").text(data.message).removeClass('d-none');
+                        $(".contact-submit-btn").text('Send Message');
                         $("#contact-form").trigger('reset');
                     }
                 });

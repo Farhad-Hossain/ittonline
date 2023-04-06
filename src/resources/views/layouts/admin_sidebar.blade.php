@@ -112,7 +112,7 @@
             <a href="{{route('admin.contacts')}}">
                 <div class="parent-icon"> <i class="bx bx-user-circle"></i>
                 </div>
-                <div class="menu-title">Contacts</div>
+                <div class="menu-title">Inquery / Contacts</div>
             </a>
         </li>
         <li>
