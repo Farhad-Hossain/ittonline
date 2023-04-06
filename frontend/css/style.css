@@ -6,12 +6,16 @@
     --dark: #091E3E;
 }
 
+.bg-red {
+    background-color: #cf2e2e;
+}
+
 #header-carousel {
     background-color: var(--dark);
 }
 @media (min-width: 992px) {
     #header-carousel {
-        height: 500px;
+        /* height: 500px; */
     }
 }
 
@@ -191,6 +195,11 @@ h6,
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
+    }
+
+    .carousel-container {
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     
     .sticky-top.navbar-dark {
