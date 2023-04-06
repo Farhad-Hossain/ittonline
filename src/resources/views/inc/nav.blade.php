@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <a href="{{route('contact')}}" class="btn btn-primary py-2 px-4 ms-3">Contact Us</a>
+            <a href="{{route('contact')}}" class="btn btn-sm btn-primary py-2 px-4 ms-3" style="border-radius: 4px;">Contact Us</a>
         </div>
     </div>
 </nav>

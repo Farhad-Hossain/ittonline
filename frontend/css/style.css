@@ -18,7 +18,10 @@
         /* height: 500px; */
     }
 }
-
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
 /*** Spinner ***/
 .spinner {
     width: 40px;
