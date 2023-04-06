@@ -1,10 +1,9 @@
 <!-- Contact Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-        
+<div class="container-fluid py-2 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-2">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
-                <h1 class="mb-0">Feel Free To Contact Us</h1>
+                {{-- <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5> --}}
+                <h4 class="mb-0">Let's Help You Become the Best Version of Yourself</h4>
             </div>
             <div class="row g-5 mb-5">
                 <div class="col-lg-4">
