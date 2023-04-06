@@ -12,6 +12,7 @@
 
 .clear-link {
     color: white;
+
 }
 #header-carousel {
     background-color: var(--dark);
@@ -20,6 +21,9 @@
     #header-carousel {
         /* height: 500px; */
         padding-bottom: 50px;
+    }
+    .home-facts-first-part {
+        padding-right: 25px;
     }
 }
 .container {

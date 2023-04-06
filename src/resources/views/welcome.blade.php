@@ -7,7 +7,7 @@
     <div class="container-fluid facts pt-4 pt-lg-0">
         <div class="container mt-4 pt-lg-0">
             <div class="row gx-0">
-                <div class="col-sm-12 col-lg-9 wow zoomIn d-flex align-items-stretch flex-lg-column-reverse" data-wow-delay="0.1s" style="padding-right: 25px;">
+                <div class="col-sm-12 col-md-9 wow zoomIn d-flex align-items-stretch home-facts-first-part" data-wow-delay="0.1s" >
                     <div class="bg-primary shadow p-5 text-light" style="border-radius: 11px;">
                         <h2>{{$appInfo ? $appInfo->app_name : ''}}</h2>
                         <p style="text-align: justify;">{{ mb_substr(strip_tags($contentAbout ? $contentAbout->short_description : ''), 0, 600) }}</p>
@@ -23,7 +23,7 @@
                         </p>
                         <p><h3>Modes of Training</h3></p>
                         <p style="height: 40px;">
-                            <span style="padding-right: 50px;">
+                            <span style="padding-right: 50px;" >
                             <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/class-room-mode.png" alt="" style="height: 100%;">Classroom
                             </span>
 
