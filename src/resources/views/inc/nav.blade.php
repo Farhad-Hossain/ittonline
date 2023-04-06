@@ -50,7 +50,7 @@
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Class Schedule</a>
                     <ul class="dropdown-menu m-0">
-                        @if( $class_schedule_menus != null )
+                        @if( $class_schedule_menus and $class_schedule_menus != null )
                         @foreach($class_schedule_menus as $cs_menu)
                             <li><a href="{{route('class_schedule_menu', $cs_menu->menu_slug)}}" class="dropdown-item">{{$cs_menu->menu_name}}</a></li>
                         @endforeach
