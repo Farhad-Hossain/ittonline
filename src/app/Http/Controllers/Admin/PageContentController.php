@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\PageContentAboutUs;
 use App\Models\PageContentQuote;
 use App\Models\PageContentWhyChooseUs;
+use App\Models\ClassScheduleMenu;
 use Auth;
 
 class PageContentController extends Controller
@@ -28,7 +29,7 @@ class PageContentController extends Controller
                 if ( !in_array($extension, $this->extensions) ) {
                     return redirect()->back('danger', 'Only image file are allowed');
                 }
-                $fileName = time().$extension;
+                $fileName = time().'.'.$extension;
                 $request->right_side_photo->move('images', $fileName);
                 $filePath = 'images/'.$fileName;
             } else {
@@ -80,6 +81,50 @@ class PageContentController extends Controller
             return redirect()->route('admin.page_content.about_us_menus')->with('success', 'About us Menu content saved successfully.');
         }
         
+    }
+
+    public function classScheduleMenus(Request $request)
+    {
+        $menus = ClassScheduleMenu::all();
+        return view('admin.pages.page_content.class_schedule_menus', ['menus'=>$menus]);
+    }
+
+    public function classScheduleMenuContentUpdate(Request $request)
+    {
+        if ($request->method() == "GET") {
+            $content = null;
+            if ( $request->id ) {
+                $content = ClassScheduleMenu::findOrFail($request->id);
+            }
+            return view('admin.pages.page_content.class_schedule_menu_content', ['content'=>$content]);
+        }
+        if ($request->method() == 'POST'){
+            if ($request->menu_id && $request->menu_id > 0) {
+                $content = ClassScheduleMenu::findOrFail($request->menu_id);    
+            } else {
+                $content = new ClassScheduleMenu();
+            }
+            $content->menu_name = $request->menu_name ?? '';
+            $content->menu_slug = str_replace(' ', '-', strtolower($content->menu_name));
+            if ($request->image) {
+                $extension = $request->image->extension();
+                if ( !in_array($extension, $this->extensions) ) {
+                    return redirect()->back('danger', 'Only image file are allowed');
+                }
+                $fileName = time().'.'.$extension;
+                $request->image->move('images', $fileName);
+                $filePath = 'images/'.$fileName;
+            } else {
+                $filePath = $content->image ?? '';
+            }
+            $content->image = $filePath;
+            $content->content = $request->content ?? '';
+
+            $content->menu_name = strtoupper($content->menu_name);
+            $content->save();
+
+            return redirect()->route('admin.page_content.class_schedule_menus')->with('success', 'About us Menu content saved successfully.');
+        }
     }
 
     public function freeQuote(Request $request)

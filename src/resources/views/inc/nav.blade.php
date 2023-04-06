@@ -46,6 +46,18 @@
                         @endforeach
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Class Schedule</a>
+                    <ul class="dropdown-menu m-0">
+                        @if( $class_schedule_menus != null )
+                        @foreach($class_schedule_menus as $cs_menu)
+                            <li><a href="{{route('class_schedule_menu', $cs_menu->menu_slug)}}" class="dropdown-item">{{$cs_menu->menu_name}}</a></li>
+                        @endforeach
+                        @endif
+                    </ul>
+                </li>
+
                 <a href="{{route('team')}}" class="nav-item nav-link {{route('team')==url()->full() ? 'active' : '' }}">Our Team</a>
                 <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a>
                 <div class="nav-item dropdown">
@@ -54,29 +66,8 @@
                         <a href="{{route('gallery')}}" class="dropdown-item">Events</a> 
                     </div>
                 </div>
-                
-                {{--
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="feature.html" class="dropdown-item">Our features</a>
-                        <a href="team.html" class="dropdown-item">Team Members</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="quote.html" class="dropdown-item">Free Quote</a>
-                    </div>
-                </div>
-                --}}
-                
             </div>
             <a href="{{route('contact')}}" class="btn btn-primary py-2 px-4 ms-3">Contact Us</a>
-            {{-- <a href="{{route('quote')}}" class="btn btn-primary py-2 px-4 ms-3">Free Quote</a> --}}
         </div>
     </div>
 </nav>

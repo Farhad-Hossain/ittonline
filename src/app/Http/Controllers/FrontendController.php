@@ -18,6 +18,7 @@ use App\Models\PageContentWhyChooseUs;
 use App\Models\ServiceCategory;
 use Mail;
 use App\Mail\ContactMail;
+use App\Models\ClassScheduleMenu;
 
 class FrontendController extends Controller
 {
@@ -53,6 +54,12 @@ class FrontendController extends Controller
     {
         $aboutUsMenu = PageContentAboutUs::where('menu_slug', $menu_slug)->first();
         return view('pages.about_us_content', ['aboutUsMenu'=>$aboutUsMenu]);
+    }
+
+    public function classScheduleMenu(Request $request, $menu_slug)
+    {
+        $classScheduleMenu = ClassScheduleMenu::where('menu_slug', $menu_slug)->first();
+        return view('pages.class_schedule_content', ['classScheduleMenu'=>$classScheduleMenu]);
     }
 
     public function courses (Request $request)
