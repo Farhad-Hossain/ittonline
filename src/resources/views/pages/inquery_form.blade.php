@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title'=>'Inquery Form', 'nav_title'=>'Inquery Form'])
+@extends('layouts.master', ['title'=>'Inquiry Form', 'nav_title'=>'Inquiry Form'])
 @section('contents')
     @include('inc.inquery_form')
 @endsection

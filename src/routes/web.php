@@ -20,7 +20,7 @@ Route::get('/class-schedule/{menu_slag}', 'FrontendController@classScheduleMenu'
 Route::get('/courses', 'FrontendController@courses')->name('courses');
 Route::get('/course-details/{id}', 'FrontendController@courseDetails')->name('course_details');
 Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
-Route::get('inquery-form', 'FrontendController@inqueryForm')->name('inquery_form');
+Route::get('inquiry-form', 'FrontendController@inqueryForm')->name('inquery_form');
 
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/quote-form', 'FrontendController@quoteForm')->name('quote_form');
