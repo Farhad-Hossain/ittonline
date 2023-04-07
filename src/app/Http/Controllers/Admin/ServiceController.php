@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\ServiceCategory;
+use App\Models\CorpTraining;
 use Auth;
 
 class ServiceController extends Controller
@@ -55,7 +56,7 @@ class ServiceController extends Controller
     public function serviceCategories(Request $request)
     {
         // $categories = ServiceCategory::with('services')->get();
-        $categories = COurse::where('is_category', 1)->get();
+        $categories = Course::where('is_category', 1)->get();
         return view('admin.pages.service_categories', ['categories'=>$categories]);
     }
 
@@ -98,4 +99,42 @@ class ServiceController extends Controller
         $service->delete();
         return back()->with('success', 'Course Deleted Successfully');
     }
+
+
+
+
+    // Training
+    public function trainingCategories(Request $request)
+    {
+        $categories = CorpTraining::where('is_category', 1)->get();
+        return view('admin.pages.training_categories', ['categories'=>$categories]);
+    }
+
+    public function addTrainingCategory(Request $request)
+    {
+        $name = $request->name;
+        $serviceCategory = new CorpTraining();
+        $serviceCategory->training_title = $name;
+        $serviceCategory->total_month = 0;
+        $serviceCategory->thumbnail = 'null';
+        $serviceCategory->category_id = 0;
+        $serviceCategory->is_category = 1;
+        $serviceCategory->is_active = $request->is_active;
+        $serviceCategory->save();
+
+        return redirect()->back()->with('success', 'Category Created successfully.');
+    }
+
+    public function editTrainingCategory(Request $request)
+    {
+        $id = $request->id;
+        $category = CorpTraining::findOrFail($id);
+        $category->training_title = $request->name;
+        $category->is_active = $request->is_active;
+        
+        $category->save();
+        session()->flash('success', 'Category updated successfully.');
+        return redirect()->back()->with('success', 'Updated successfully.');
+    }
+
 }

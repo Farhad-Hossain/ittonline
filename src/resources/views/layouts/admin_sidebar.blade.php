@@ -102,6 +102,24 @@
             </ul>
         </li>
         <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-lock"></i>
+                </div>
+                <div class="menu-title">Corporate Training Setup</div>
+            </a>
+            <ul>
+                <li> 
+                    <a href="{{route('admin.corp_training.categories')}}"><i class="bx bx-right-arrow-alt"></i>Training Categories</a>
+                </li>
+                <li> 
+                    <a href="{{route('admin.corp_training.all')}}"><i class="bx bx-right-arrow-alt"></i>All Trainings</a>
+                </li>
+                <li> 
+                    <a href="{{route('admin.corp_training.save')}}"><i class="bx bx-right-arrow-alt"></i>Add Training</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="{{route('admin.quotes')}}">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>

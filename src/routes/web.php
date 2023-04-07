@@ -70,6 +70,16 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middlewa
         Route::match(['POST'], 'edit-category', 'ServiceController@editServiceCategory')->name('edit_category');
     });
 
+    // Corprate training
+    Route::group(['prefix'=>'corp-training', 'as'=>'corp_training.'], function () {
+        Route::match(['GET'], '/', 'ServiceController@trainings')->name('all');
+        Route::match(['GET', 'POST'], 'save-training', 'ServiceController@saveTraining')->name('save');
+        Route::match(['POST'], 'delete-training', 'ServiceController@deleteTraining')->name('delete');
+        Route::match(['GET'], 'categories', 'ServiceController@trainingCategories')->name('categories');
+        Route::match(['POST'], 'add-category', 'ServiceController@addTrainingCategory')->name('add_category');
+        Route::match(['POST'], 'edit-category', 'ServiceController@editTrainingCategory')->name('edit_category');
+    });
+
     // Gallery
     Route::group(['prefix'=>'gallery', 'as'=>'gallery.'], function () {
         Route::match(['GET'], '/', 'GalleryController@gallery')->name('list');
