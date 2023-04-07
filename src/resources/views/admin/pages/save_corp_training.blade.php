@@ -38,11 +38,11 @@
                             </select>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="" class="form-label">Duration <small class="text-danger">*(In Month)</small></label>
-                            <input type="number" name="total_month" class="form-control form-control-sm" value="{{$training ? $training->total_month : ''}}">
+                            <label for="" class="form-label">Image <small class="text-danger">*(Optional)</small></label>
+                            <input type="file" name="image" class="form-control form-control-sm" value="">
                         </div>
                         <div class="col-md-12 form-group">
-                            <label for="" class="form-label">Training Details</label>
+                            <label for="" class="form-label">Training Details <small class="text-danger">*(Optional)</small></label>
                             <textarea class="form-control form-control-sm" name="training_details" id="summernote" rows="10"></textarea>
                         </div>
                         <div class="col-md-12 form-group mt-2">

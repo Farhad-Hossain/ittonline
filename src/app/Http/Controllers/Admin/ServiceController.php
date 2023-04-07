@@ -156,16 +156,16 @@ class ServiceController extends Controller
 
         if ( $request->method() == 'POST' ) {
             $training->training_title = $request->training_title;
-            $training->total_month = $request->total_month;
-            // if ( $request->image && $request->image != null) {
-            //     $fileName = time().'.'.$request->image->extension();
-            //     $request->image->move(public_path('images'), $fileName);
-            //     $fileName = 'images/'.$fileName;
-            // } else {
-            //     $fileName = $training->image ?? '';
-            // }
+            $training->total_month = 0;
+            if ( $request->image && $request->image != null) {
+                $fileName = time().'.'.$request->image->extension();
+                $request->image->move(public_path('images'), $fileName);
+                $fileName = 'images/'.$fileName;
+            } else {
+                $fileName = $training->image ?? '';
+            }
 
-            // $training->image = $fileName;
+            $training->thumbnail = $fileName;
             $training->training_details = $request->training_details;
             $training->category_id = $request->category_id;
             $training->save();

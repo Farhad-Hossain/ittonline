@@ -1,11 +1,11 @@
 <!-- Course details Start -->
 <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5">
+    <div class="container py-1">
         <div class="row g-5">
             <div class="col-sm-12 text-justify" style="text-align: justify;">
-                <div class="section-title position-relative pb-3 mb-5">
-                    <h5 class="fw-bold text-primary text-uppercase">Training Details</h5>
-                </div>
+                @if($training->thumbnail)
+                <img src="{{asset($training ? $training->thumbnail : '')}}" alt="" style="width: 100%;">
+                @endif
                 <p class="mb-4">
                     {!! $training ? $training->training_details : '' !!}
                 </p>
