@@ -50,7 +50,7 @@
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Class Schedule</a>
                     <ul class="dropdown-menu m-0">
-                        @if( $class_schedule_menus and $class_schedule_menus != null )
+                        @if( $class_schedule_menus && $class_schedule_menus != null )
                         @foreach($class_schedule_menus as $cs_menu)
                             <li><a href="{{route('class_schedule_menu', $cs_menu->menu_slug)}}" class="dropdown-item">{{$cs_menu->menu_name}}</a></li>
                         @endforeach
@@ -58,7 +58,31 @@
                     </ul>
                 </li>
 
-                <a href="{{route('team')}}" class="nav-item nav-link {{route('team')==url()->full() ? 'active' : '' }}">Our Team</a>
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Corporate Trainings</a>
+                    <ul class="dropdown-menu m-0">
+                        @if( $corp_training_categories && $corp_training_categories != null )
+                        @foreach($corp_training_categories as $training_category)
+                            <li>
+                                <a href="#" class="dropdown-item">
+                                    <span>{{$training_category->training_title}}</span>&nbsp; &nbsp;<span style="position:absolute; right: 7px;">&raquo;</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    @foreach($training_category->trainings as $training)
+                                    <li>
+                                        <a href="{{route('training_details', [$training->id,])}}" class="dropdown-item">
+                                            <span>{{$training->training_title}}</span> 
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul> 
+                            </li>
+                            @endforeach
+                        @endif
+                    </ul>
+                </li>
+
+                {{-- <a href="{{route('team')}}" class="nav-item nav-link {{route('team')==url()->full() ? 'active' : '' }}">Our Team</a> --}}
                 {{-- <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a> --}}
                 <div class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle {{route('gallery')==url()->full() ? 'active' : '' }}" data-bs-toggle="dropdown">Gallery</a>

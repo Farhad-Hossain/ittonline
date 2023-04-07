@@ -20,9 +20,9 @@
                     @foreach($trainings as $training)
                     <tr>
                         <td>{{$training->training_title ?? ''}}</td>
-                        <td>{{$course->total_month}}</td>
+                        <td>{{$training->total_month}}</td>
                         <td>
-                            <a href="{{route('admin.corp_training.save')}}?course_id={{$training->id}}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{route('admin.corp_training.save')}}?training_id={{$training->id}}" class="btn btn-sm btn-primary">Edit</a>
                             <button class="btn btn-sm btn-danger delete-btn" data-id="{{$training->id}}">Delete</button>
                         </td>
                     </tr>

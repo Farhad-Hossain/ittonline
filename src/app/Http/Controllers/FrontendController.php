@@ -19,6 +19,7 @@ use App\Models\ServiceCategory;
 use Mail;
 use App\Mail\ContactMail;
 use App\Models\ClassScheduleMenu;
+use App\Models\CorpTraining;
 
 class FrontendController extends Controller
 {
@@ -78,6 +79,13 @@ class FrontendController extends Controller
         $stuffs = Stuff::where('is_active', 1)->get();
         $contentQuote = PageContentQuote::first();
         return view('pages.course_details', ['course'=>$course, 'stuffs'=>$stuffs, 'contentQuote'=>$contentQuote]);
+    }
+    public function trainingDetails(Request $request, $training_id)
+    {
+        $training = CorpTraining::findOrFail($training_id);
+        $stuffs = Stuff::where('is_active', 1)->get();
+        $contentQuote = PageContentQuote::first();
+        return view('pages.training_details', ['training'=>$training, 'stuffs'=>$stuffs, 'contentQuote'=>$contentQuote]);
     }
 
     public function getQuote (Request $request)

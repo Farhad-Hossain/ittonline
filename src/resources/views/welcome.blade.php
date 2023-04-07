@@ -22,7 +22,7 @@
                             </button>
                         </p>
                         <p><h3>Modes of Training</h3></p>
-                        <p style="height: 40px;">
+                        <p style="height: 43px;">
                             <span style="padding-right: 50px;" >
                             <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/class-room-mode.png" alt="" style="height: 100%;">Classroom
                             </span>
@@ -37,7 +37,7 @@
                             </span>
                             --}}
 
-                            <span style="padding-right: 50px;">
+                            <span>
                                 <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/15.png" alt="" style="height: 100%;">Online / E-Learning
                             </span>
                             

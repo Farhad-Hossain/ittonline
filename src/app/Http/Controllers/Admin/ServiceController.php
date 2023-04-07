@@ -145,7 +145,42 @@ class ServiceController extends Controller
 
     public function saveTraining(Request $request)
     {
-        dd('Under development');
+        $title = 'Add Training';
+        $training = null;
+        if ( $request->training_id && $request->training_id > 0 ) {
+            $title = 'Edit Training';
+            $training = CorpTraining::findOrFail($request->training_id);
+        } else {
+            $training = new CorpTraining();
+        }
+
+        if ( $request->method() == 'POST' ) {
+            $training->training_title = $request->training_title;
+            $training->total_month = $request->total_month;
+            // if ( $request->image && $request->image != null) {
+            //     $fileName = time().'.'.$request->image->extension();
+            //     $request->image->move(public_path('images'), $fileName);
+            //     $fileName = 'images/'.$fileName;
+            // } else {
+            //     $fileName = $training->image ?? '';
+            // }
+
+            // $training->image = $fileName;
+            $training->training_details = $request->training_details;
+            $training->category_id = $request->category_id;
+            $training->save();
+
+            return redirect()->back()->with('success', 'Training info updated successfully.');
+        } 
+        $categories = CorpTraining::where('is_category', 1)->get();
+        return view('admin.pages.save_corp_training', ['training'=>$training, 'title'=>$title, 'categories'=>$categories]);
+    }
+
+    public function deleteTraining(Request $request)
+    {
+        $service = CorpTraining::findOrFail($request->id);
+        $service->delete();
+        return back()->with('success', 'Training Deleted Successfully');
     }
 
 }

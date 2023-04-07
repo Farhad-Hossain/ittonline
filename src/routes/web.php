@@ -19,6 +19,7 @@ Route::get('/about-us/{menu_slag}', 'FrontendController@aboutUsMenu')->name('abo
 Route::get('/class-schedule/{menu_slag}', 'FrontendController@classScheduleMenu')->name('class_schedule_menu');
 Route::get('/courses', 'FrontendController@courses')->name('courses');
 Route::get('/course-details/{id}', 'FrontendController@courseDetails')->name('course_details');
+Route::get('/training-details/{id}', 'FrontendController@trainingDetails')->name('training_details');
 Route::get('/free-quote', 'FrontendController@getQuote')->name('quote');
 Route::get('inquiry-form', 'FrontendController@inqueryForm')->name('inquery_form');
 
