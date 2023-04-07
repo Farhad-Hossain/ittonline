@@ -19,6 +19,11 @@
                     {{$appInfo ? $appInfo->email : ''}} 
                 </a>
                 </small>
+                <small class="me-3 text-light"><i class="fa fa-file me-2"></i>
+                <a href="{{route('inquery_form')}}" style="color: inherit;"> 
+                    Inquery Form
+                </a>
+                </small>
                 {{-- <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{$appInfo ? $appInfo->twitter : ''}}"><i class="fab fa-twitter fw-normal"></i></a> --}}
                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{$appInfo ? $appInfo->facebook : ''}}"><i class="fab fa-facebook-f fw-normal"></i></a>
                 {{-- <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{$appInfo ? $appInfo->linnkedin : ''}}"><i class="fab fa-linkedin-in fw-normal"></i></a> --}}
