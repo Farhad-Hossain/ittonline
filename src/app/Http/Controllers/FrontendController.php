@@ -54,7 +54,8 @@ class FrontendController extends Controller
     public function aboutUsMenu(Request $request, $menu_slug)
     {
         $aboutUsMenu = PageContentAboutUs::where('menu_slug', $menu_slug)->first();
-        return view('pages.about_us_content', ['aboutUsMenu'=>$aboutUsMenu]);
+        $contentQuote = PageContentQuote::first();
+        return view('pages.about_us_content', ['aboutUsMenu'=>$aboutUsMenu, 'contentQuote'=>$contentQuote]);
     }
 
     public function classScheduleMenu(Request $request, $menu_slug)
