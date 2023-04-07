@@ -13,6 +13,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Mobile No</th>
                         <th>Service</th>
                         <th>Message</th>    
                         <th>Time</th>
@@ -23,6 +24,7 @@
                     <tr>
                         <td>{{$contact->name ?? ''}}</td>
                         <td>{{$contact->email ?? ''}}</td>
+                        <td>{{$contact->mobile_no}}</td>
                         <td>{{$contact->subject}}</td>
                         <td title="{{$contact->message}}">
                             <button data-message="{{$contact->message}}" class="btn btn-sm btn-info td-content-details-btn">See Message</button>

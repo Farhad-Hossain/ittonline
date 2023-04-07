@@ -97,7 +97,8 @@ class FrontendController extends Controller
 
     public function contact(Request $request)
     {
-        return view('pages.contact');
+        $contentQuote = PageContentQuote::first();
+        return view('pages.contact', ['contentQuote'=>$contentQuote]);
     }
 
     public function quoteForm(Request $request)
@@ -139,6 +140,7 @@ class FrontendController extends Controller
             $contact->subject = $request->subject ?? '';
             $contact->message = $request->message ?? '';
             $contact->ip_address = $request->ip();
+            $contact->mobile_no = $request->mobile_no ?? '';
             $contact->save();
 
             $mailData = [

@@ -40,7 +40,9 @@
                     </div>
                 </div>
             </div>
+            @include('inc.quote_in_contact')
             <div class="row g-5">
+                {{--
                 <div class="alert alert-info d-none" id="contact-msg"></div>
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                     <form action="{{route('contact_form')}}" method="POST" id="contact-form">
@@ -63,10 +65,11 @@
                         </div>
                     </form>
                 </div>
+                --}}
                 <div id="hidden-iframe-container" class="d-none">
                     {!!$appInfo ? $appInfo->location_google_map_embedded_link : ''!!}
                 </div>
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
+                <div class="col-12 wow slideInUp" data-wow-delay="0.6s">
                     <iframe class="position-relative rounded w-100 h-100" id="original-iframe"
                         src=""
                         frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
