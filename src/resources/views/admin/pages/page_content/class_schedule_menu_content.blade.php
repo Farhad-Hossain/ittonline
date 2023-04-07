@@ -44,6 +44,7 @@
     $(document).ready(function () {
         let html = `{{$content ? $content->content : ""}}`;
         $('#summernote').html(html);
+        $('#summernote').summernote('lineHeight', 0.5);
         $('#summernote').summernote({
             height: 200,
             toolbar: [

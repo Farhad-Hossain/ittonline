@@ -114,6 +114,7 @@
     $(document).ready(function () {
         let html = `{{$basicInfo ? $basicInfo->offers_content : '' }}`;
         $('#summernote').html(html);
+        $('#summernote').summernote('lineHeight', 0.5);
         $('#summernote').summernote({
             height: 150,
             toolbar: [
@@ -123,6 +124,7 @@
                 ['table', ['table']],
                 ['insert', ['link']],
             ],
+            lineHeights: ['0.2', '0.3', '0.4', '0.5', '0.6', '0.8', '1.0', '1.2', '1.4', '1.5', '2.0', '3.0'],
             placeholder: 'Write here . . .',
         });
     })

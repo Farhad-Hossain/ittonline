@@ -42,6 +42,7 @@
     $(document).ready(function () {
         let html = `{{$content ? $content->short_description : ""}}`;
         $('#summernote').html(html);
+        $('#summernote').summernote('lineHeight', 0.5);
         $('#summernote').summernote({
             height: 200,
             toolbar: [

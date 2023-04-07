@@ -69,6 +69,7 @@
     $(document).ready(function () {
         let html = `{{$course ? $course->course_details : '' }}`;
         $('#summernote').html(html);
+        $('#summernote').summernote('lineHeight', 0.5);
         $('#summernote').summernote({
             height: 200,
             toolbar: [
