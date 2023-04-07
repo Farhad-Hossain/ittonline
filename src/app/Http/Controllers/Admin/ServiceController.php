@@ -137,4 +137,15 @@ class ServiceController extends Controller
         return redirect()->back()->with('success', 'Updated successfully.');
     }
 
+    public function trainings(Request $request)
+    {
+        $trainings = CorpTraining::where('is_category', 0) ->get();
+        return view('admin.pages.trainings', ['trainings'=>$trainings]);
+    }
+
+    public function saveTraining(Request $request)
+    {
+        dd('Under development');
+    }
+
 }
