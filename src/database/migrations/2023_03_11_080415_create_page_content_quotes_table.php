@@ -17,6 +17,7 @@ class CreatePageContentQuotesTable extends Migration
         Schema::create('page_content_quotes', function (Blueprint $table) {
             $table->id();
             $table->string('heading_line')->nullable();
+            $table->string('image')->nullable();
             $table->mediumText('short_description')->nullable();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');

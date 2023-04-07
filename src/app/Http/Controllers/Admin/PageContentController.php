@@ -132,7 +132,20 @@ class PageContentController extends Controller
         if ($request->method() == 'POST') {
             $content = PageContentQuote::first() != null ? PageContentQuote::first() : new PageContentQuote() ;
             $content->heading_line = $request->heading_line ? $request->heading_line : '';
-            
+
+
+            if ($request->image) {
+                $extension = $request->image->extension();
+                if ( !in_array($extension, $this->extensions) ) {
+                    return redirect()->back('danger', 'Only image file are allowed');
+                }
+                $fileName = time().'.'.$extension;
+                $request->image->move('images', $fileName);
+                $filePath = 'images/'.$fileName;
+            } else {
+                $filePath = $content->image ?? '';
+            }
+            $content->image = $filePath;
             $content->short_description = $request->short_description ?? '';
             $content->ip = $request->ip();
             $content->created_by = !$content->created_by ? Auth::user()->id : $content->created_by;

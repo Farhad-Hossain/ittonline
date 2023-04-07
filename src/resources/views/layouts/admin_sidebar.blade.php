@@ -54,7 +54,7 @@
                     <a href="{{route('admin.page_content.class_schedule_menus')}}"><i class="bx bx-right-arrow-alt"></i>Class Schedule Menus</a>
                 </li>
                 <li> 
-                    <a href="{{route('admin.page_content.free_quote')}}"><i class="bx bx-right-arrow-alt"></i>Free Quote</a>
+                    <a href="{{route('admin.page_content.free_quote')}}"><i class="bx bx-right-arrow-alt"></i>Quick Inquiry</a>
                 </li>
                 <li> 
                     <a href="{{route('admin.page_content.why_choose_us')}}"><i class="bx bx-right-arrow-alt"></i>Why Choose Us</a>
