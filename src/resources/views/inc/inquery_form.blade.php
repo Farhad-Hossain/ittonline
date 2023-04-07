@@ -47,7 +47,10 @@
                             <div class="col-md-6">
                                 <input type="email" class="form-control border-1 bg-light px-4" placeholder="Your Email" style="height: 55px;" name="email" required>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control border-1 bg-light px-4" placeholder="Contact no." style="height: 55px;" name="mobile_no" required>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
                                 <input type="text" class="form-control border-1 bg-light px-4" placeholder="Subject" style="height: 55px;" name="subject" required>
                             </div>
                             <div class="col-12">
