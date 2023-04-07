@@ -9,7 +9,7 @@
             @php $count = 0; @endphp
             @foreach($courses as $course)
             @if($course->is_category) @continue @endif
-            @if($count > 6) @break @endif
+            @if($count >= 6) @break @endif
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="blog-item bg-light rounded overflow-hidden">
                     <div class="blog-img position-relative overflow-hidden">
