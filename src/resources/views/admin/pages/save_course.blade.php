@@ -15,7 +15,6 @@
                             <a href="{{route('admin.course.all')}}" class="btn btn-sm btn-primary pull-right">All Courses</a>
                         </div>
                     </div>
-                    
                 </div>
                 <hr/>
                 <form action="{{route('admin.course.save')}}" method="POST" enctype="multipart/form-data">

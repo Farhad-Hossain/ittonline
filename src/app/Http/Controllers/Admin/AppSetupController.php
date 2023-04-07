@@ -48,6 +48,7 @@ class AppSetupController extends Controller
             $basicInfo->updated_by = Auth::user()->id;
             $basicInfo->created_ip = $req->ip();
             $basicInfo->updated_ip = $req->ip();
+            $basicInfo->offers_content = $req->offers_content ?? '';
 
             $basicInfo->save();
 

@@ -1,5 +1,7 @@
 @extends('layouts.admin_master', ['title'=>'App Setting'])
-
+@push('custom_styles')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+@endpush
 @section('contents')
 <div class="row">
     <div class="col col-lg-9 mx-auto">
@@ -88,6 +90,11 @@
                                 {{$basicInfo ? $basicInfo['location_google_map_embedded_link'] : ''}}
                             </textarea>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label for="" class="form-label">Latest Offers Content 
+                            </label>
+                            <textarea class="form-control" name="offers_content" id="summernote"></textarea>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="form-group col-md-12">
@@ -100,3 +107,24 @@
     </div>
 </div>
 @endsection
+
+@push('custom_scripts')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        let html = `{{$basicInfo ? $basicInfo->offers_content : '' }}`;
+        $('#summernote').html(html);
+        $('#summernote').summernote({
+            height: 150,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear','color','fontsize',]],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['para', ['ul', 'ol']],
+                ['table', ['table']],
+                ['insert', ['link']],
+            ],
+            placeholder: 'Write here . . .',
+        });
+    })
+</script>
+@endpush

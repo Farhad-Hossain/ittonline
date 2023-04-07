@@ -49,30 +49,7 @@
                     <div class="bg-light shadow p-2 w-100" style="border-radius: 11px;">
                         <h3 class="pt-3 mt-3 underline"> || Latest Offers</h3>
                         <marquee onmouseover="this.start();" onmouseout="this.stop();" direction="up" scrolldelay="150" style="max-height: 250px;">
-                            <strong>Free Microsoft Azure With CCNA</strong><br>
-                            -Online / On-Campus<br>
-                            -Schedule 29th Mar 5:00PM<br>
-                            <strong>Free Cisco Firewall with CCNP</strong><br>
-                            -Schedule 3rd Apr  5:00PM<br>
-                            -Instructor : Haroon Malik<br>
-                            <strong>Free Microsoft Azure With CCNA</strong><br>
-                            -Online / On-Campus<br>
-                            -Schedule 29th Mar 5:00PM<br>
-                            <strong>Free Cisco Firewall with CCNP</strong><br>
-                            -Schedule 3rd Apr  5:00PM<br>
-                            -Instructor : Haroon Malik<br>
-                            <strong>Free Microsoft Azure With CCNA</strong><br>
-                            -Online / On-Campus<br>
-                            -Schedule 29th Mar 5:00PM<br>
-                            <strong>Free Cisco Firewall with CCNP</strong><br>
-                            -Schedule 3rd Apr  5:00PM<br>
-                            -Instructor : Haroon Malik<br>
-                            <strong>Free Microsoft Azure With CCNA</strong><br>
-                            -Online / On-Campus<br>
-                            -Schedule 29th Mar 5:00PM<br>
-                            <strong>Free Cisco Firewall with CCNP</strong><br>
-                            -Schedule 3rd Apr  5:00PM<br>
-                            -Instructor : Haroon Malik<br>
+                            {!! $appInfo->offers_content !!}
                         </marquee>
                     </div>
                 </div>
