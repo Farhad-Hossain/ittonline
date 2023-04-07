@@ -34,9 +34,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-lg-3 wow zoomIn d-flex align-items-stretch order-sm-first order-md-last" data-wow-delay="0.3s">
+                <div class="col-sm-12 col-md-3 wow zoomIn d-flex" data-wow-delay="0.3s">
                     <div class="bg-light shadow p-2 w-100" style="border-radius: 11px;">
-                        <h3 class="pt-3 mt-3 underline"> || Latest Offers</h3>
+                        <h3 class="pt-3 mt-md-3"> || Latest Offers</h3>
                         <marquee onmouseover="this.start();" onmouseout="this.stop();" direction="up" scrolldelay="150" style="height: 80%;">
                             {!! $appInfo->offers_content !!}
                         </marquee>
