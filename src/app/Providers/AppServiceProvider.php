@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
 
         $currentUrl = url()->full();
         $courseCategories = Schema::hasTable( (new ServiceCategory())->getTable() ) ? ServiceCategory::all() : null;
-        $courses = Schema::hasTable( (new Course())->getTable() ) ? Course::where('is_active', 1)->get() : null;
+        $courses = Schema::hasTable( (new Course())->getTable() ) ? Course::where('is_active', 1)->orderBy('id', 'desc')->get() : null;
         $about_us_menus = Schema::hasTable( (new PageContentAboutUs())->getTable() ) ? PageContentAboutUs::where('is_menu', 1)->get() : null;
         $class_schedule_menus = Schema::hasTable( (new ClassScheduleMenu())->getTable() ) ? ClassScheduleMenu::all() : null;
         $corp_training_categories = Schema::hasTable( (new CorpTraining())->getTable() ) ? CorpTraining::with('trainings')->where('is_category', 1)->where('is_active', 1)->get() : null;
