@@ -1,6 +1,6 @@
 <!-- Start::Team -->
 <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5">
+    <div class="container py-3">
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
             <h5 class="fw-bold text-primary text-uppercase">Team Members</h5>
             <h1 class="mb-0">Our Professional Trainers </h1>

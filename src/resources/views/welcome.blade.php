@@ -11,44 +11,33 @@
                     <div class="bg-primary shadow p-5 text-light" style="border-radius: 11px;">
                         <h2>{{$appInfo ? $appInfo->app_name : ''}}</h2>
                         <p style="text-align: justify;">{{ mb_substr(strip_tags($contentAbout ? $contentAbout->short_description : ''), 0, 600) }}</p>
-                        <br class="m-0 p-0" />
                         <p class="py-2">
-                            <a class="btn btn-light text-dark" href="{{route('about')}}">
+                            <a class="btn btn-light text-dark mb-2" href="{{route('about')}}">
                                 Read More
                             </a>
                             &nbsp; &nbsp;
-                            <button type="button" class="btn btn-outline-light btn-rounded">
+                            <button type="button" class="btn btn-outline-light btn-rounded mb-2">
                                     {{$appInfo ? $appInfo->mobile_number : ''}}
                             </button>
                         </p>
                         <p><h3>Modes of Training</h3></p>
-                        <p style="height: 43px;">
-                            <span style="padding-right: 50px;" >
-                            <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/class-room-mode.png" alt="" style="height: 100%;">Classroom
-                            </span>
-
-                            <span style="padding-right: 50px;">
-                            <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/one-to-one.png" alt="" style="height: 100%;">One-To-One
-                            </span>
-
-                            {{--
-                            <span style="padding-right: 50px;">
-                                <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/on-site-mode.png" alt="" style="height: 100%;">Customer Premises
-                            </span>
-                            --}}
-
-                            <span>
-                                <img src="https://www.corvit.com/systems/wp-content/uploads/2023/03/15.png" alt="" style="height: 100%;">Online / E-Learning
-                            </span>
-                            
-                        </p>
-
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3 mb-2">
+                                <img src="{{asset('frontend/img/modes_of_training_classroom.png')}}" alt="" style="height: 42px;">Classroom
+                            </div>
+                            <div class="col-sm-12 col-md-3 mb-2">
+                                <img src="{{asset('frontend/img/modes_of_training_one_to_one.png')}}" alt="" style="height: 42px;">One-To-One
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <img src="{{asset('frontend/img/modes_of_training_online.png')}}" alt="" style="height: 42px;">Online
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-3 wow zoomIn d-flex align-items-stretch order-sm-first order-md-last" data-wow-delay="0.3s">
                     <div class="bg-light shadow p-2 w-100" style="border-radius: 11px;">
                         <h3 class="pt-3 mt-3 underline"> || Latest Offers</h3>
-                        <marquee onmouseover="this.start();" onmouseout="this.stop();" direction="up" scrolldelay="150" style="max-height: 250px;">
+                        <marquee onmouseover="this.start();" onmouseout="this.stop();" direction="up" scrolldelay="150" style="height: 80%;">
                             {!! $appInfo->offers_content !!}
                         </marquee>
                     </div>

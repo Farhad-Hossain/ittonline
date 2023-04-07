@@ -61,7 +61,8 @@ class FrontendController extends Controller
     public function classScheduleMenu(Request $request, $menu_slug)
     {
         $classScheduleMenu = ClassScheduleMenu::where('menu_slug', $menu_slug)->first();
-        return view('pages.class_schedule_content', ['classScheduleMenu'=>$classScheduleMenu]);
+        $contentQuote = PageContentQuote::first();
+        return view('pages.class_schedule_content', ['classScheduleMenu'=>$classScheduleMenu, 'contentQuote'=>$contentQuote]);
     }
 
     public function courses (Request $request)
