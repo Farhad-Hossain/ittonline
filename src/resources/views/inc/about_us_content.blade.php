@@ -1,6 +1,6 @@
 <!-- About us menu details Start -->
 <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5">
+    <div class="container py-1">
         <div class="row g-5">
             <div class="col-12">
                 <p class="mb-4">
