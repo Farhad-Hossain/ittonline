@@ -50,7 +50,7 @@
                                 <input type="text" class="form-control border-1 bg-light px-4" placeholder="Subject" style="height: 55px;" name="subject" required>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-1 bg-light px-4 py-3" rows="4" placeholder="Message" name="message" required></textarea>
+                                <textarea class="form-control border-1 bg-light px-4 py-3" rows="3" placeholder="Message" name="message" required></textarea>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <button class="btn btn-primary w-100 py-3 contact-submit-btn" type="submit">Inquire Now</button>
