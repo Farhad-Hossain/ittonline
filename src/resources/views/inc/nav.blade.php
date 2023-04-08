@@ -18,7 +18,7 @@
                             <li><a href="{{route('about_us_menu', $menu->menu_slug)}}" class="dropdown-item">{{$menu->menu_name}}</a></li>
                         @endforeach
                         @endif
-                        <li><a href="{{route('testimonials')}}" class="dropdown-item">Testimonials</a></li>
+                        <li><a href="{{route('testimonials')}}" class="dropdown-item text-uppercase">Testimonials</a></li>
                     </ul>
                 </li>
 
