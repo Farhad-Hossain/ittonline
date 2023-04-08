@@ -82,6 +82,17 @@
                     </ul>
                 </li>
 
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown">Fee</a>
+                    <ul class="dropdown-menu m-0">
+                        @if( $fee_menus != null )
+                        @foreach($fee_menus as $fee_menu)
+                            <li><a href="{{route('fee_menu', $fee_menu->menu_slug)}}" class="dropdown-item">{{$fee_menu->menu_name}}</a></li>
+                        @endforeach
+                        @endif
+                    </ul>
+                </li>
+
                 {{-- <a href="{{route('team')}}" class="nav-item nav-link {{route('team')==url()->full() ? 'active' : '' }}">Our Team</a> --}}
                 {{-- <a href="{{route('quote')}}" class="nav-item nav-link {{route('quote')==url()->full() ? 'active' : '' }}">Free Quote</a> --}}
                 <div class="nav-item dropdown">

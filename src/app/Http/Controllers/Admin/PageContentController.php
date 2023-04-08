@@ -9,6 +9,7 @@ use App\Models\PageContentAboutUs;
 use App\Models\PageContentQuote;
 use App\Models\PageContentWhyChooseUs;
 use App\Models\ClassScheduleMenu;
+use App\Models\FeeMenu;
 use Auth;
 
 class PageContentController extends Controller
@@ -199,5 +200,57 @@ class PageContentController extends Controller
             $content->save();
             return back()->with('success', 'Saved successfully.');
         }
+    }
+
+    public function feeMenus(Request $request)
+    {
+        $menus = FeeMenu::all();
+        return view('admin.pages.page_content.fee_menus', ['menus'=>$menus]);
+    }
+
+    public function feeMenuContentUpdate(Request $request)
+    {
+        if ($request->method() == "GET") {
+            $content = null;
+            if ( $request->id ) {
+                $content = FeeMenu::findOrFail($request->id);
+            }
+            return view('admin.pages.page_content.fee_menu_content', ['content'=>$content]);
+        }
+        if ($request->method() == 'POST') {
+            if ($request->menu_id && $request->menu_id > 0) {
+                $content = FeeMenu::findOrFail($request->menu_id);    
+            } else {
+                $content = new FeeMenu();
+            }
+            $content->menu_name = $request->menu_name ?? '';
+            $content->menu_slug = str_replace(' ', '-', $content->menu_name);
+            $content->is_menu = 1;
+
+            if ( $request->image ) {
+                $extension = $request->image->extension();
+                if ( !in_array($extension, $this->extensions) ) {
+                    return redirect()->back('danger', 'Only image file are allowed');
+                }
+                $fileName = time().'.'.$extension;
+                $request->image->move(public_path('images'), $fileName);
+                $photoPath = 'images/'.$fileName;
+            } else {
+                $photoPath = $content->image;
+            }
+            $content->image = $photoPath;
+
+            $content->short_description = $request->short_description ?? '';
+            $content->save();
+
+            return redirect()->back()->with('success', 'Fee Menu content saved successfully.');
+        }
+    }
+
+    public function deleteFeeMenu(Request $request)
+    {
+        $feeMenu = FeeMenu::findOrFail($request->id);
+        $feeMenu->delete();
+        return redirect()->back()->with('success', 'Menu deleted.');
     }
 }

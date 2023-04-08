@@ -80,6 +80,23 @@
                 </li>
             </ul>
         </li>
+
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-lock"></i>
+                </div>
+                <div class="menu-title">Fee Menu Setup</div>
+            </a>
+            <ul>
+                <li> 
+                    <a href="{{route('admin.page_content.fee_menus')}}"><i class="bx bx-right-arrow-alt"></i>All Menus</a>
+                </li>
+                <li> 
+                    <a href="{{route('admin.page_content.fee_menu_content_update')}}"><i class="bx bx-right-arrow-alt"></i>Add Menu</a>
+                </li>
+            </ul>
+        </li>
+
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-lock"></i>

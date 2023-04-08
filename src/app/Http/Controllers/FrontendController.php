@@ -20,6 +20,7 @@ use Mail;
 use App\Mail\ContactMail;
 use App\Models\ClassScheduleMenu;
 use App\Models\CorpTraining;
+use App\Models\FeeMenu;
 
 class FrontendController extends Controller
 {
@@ -56,6 +57,13 @@ class FrontendController extends Controller
         $aboutUsMenu = PageContentAboutUs::where('menu_slug', $menu_slug)->first();
         $contentQuote = PageContentQuote::first();
         return view('pages.about_us_content', ['aboutUsMenu'=>$aboutUsMenu, 'contentQuote'=>$contentQuote]);
+    }
+
+    public function feeMenu(Request $request, $menu_slug)
+    {
+        $feeMenu = FeeMenu::where('menu_slug', $menu_slug)->first();
+        $contentQuote = PageContentQuote::first();
+        return view('pages.fee_menu_content', ['feeMenu'=>$feeMenu, 'contentQuote'=>$contentQuote]);
     }
 
     public function classScheduleMenu(Request $request, $menu_slug)
