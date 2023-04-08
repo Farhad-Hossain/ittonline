@@ -29,6 +29,7 @@ Route::post('/quote-form', 'FrontendController@quoteForm')->name('quote_form');
 Route::post('/contact-form', 'FrontendController@contactForm')->name('contact_form');
 Route::get('/gallery', 'FrontendController@gallery')->name('gallery');
 Route::get('/our-excelent--members', 'FrontendController@team')->name('team');
+Route::get('/testimonials', 'FrontendController@testimonials')->name('testimonials');
 
 Route::get('/artisan-command-9090', 'FrontendController@executeCommand')->name('artisan_command');
 

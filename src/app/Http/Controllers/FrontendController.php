@@ -59,6 +59,13 @@ class FrontendController extends Controller
         return view('pages.about_us_content', ['aboutUsMenu'=>$aboutUsMenu, 'contentQuote'=>$contentQuote]);
     }
 
+    public function testimonials(Request $request)
+    {
+        $testimonials = Testimonial::all();
+        $contentQuote = PageContentQuote::first();
+        return view('pages.testimonials', ['testimonials'=>$testimonials, 'contentQuote'=>$contentQuote]);
+    }
+
     public function feeMenu(Request $request, $menu_slug)
     {
         $feeMenu = FeeMenu::where('menu_slug', $menu_slug)->first();
