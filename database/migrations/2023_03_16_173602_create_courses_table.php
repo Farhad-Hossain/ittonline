@@ -22,6 +22,7 @@ class CreateCoursesTable extends Migration
             $table->string('thumbnail');
             $table->text('course_details')->nullable();
             $table->unsignedInteger('created_by');
+            $table->unsignedTinyInteger('is_active')->default(0);
             $table->string('ip_address');
             $table->timestamps();
         });

@@ -21,6 +21,7 @@ class CreatePageContentAboutUsTable extends Migration
             $table->string('right_side_photo')->nullable();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
+            $table->unsignedTinyInteger('is_menu')->default(0);
             $table->string('ip')->nullable();
             $table->timestamps();
         });
